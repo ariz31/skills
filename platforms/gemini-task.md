@@ -1,0 +1,3 @@
+# Gemini Task
+
+Optimize for autonomous deliverable execution, isolated worker scopes, shared workspace coordination and evidence-based verification. Detect available sub-agent dispatch, messaging, status and file tools before use. For Delegate, load its [Gemini Task adapter](../skills/orchestration/delegate/adapters/gemini-task.md). Use parallel fan-out only when actual concurrency is available and beneficial; preserve verified work during retries. Do not install skills unless explicitly requested. If tools are missing, follow the portable fallback.

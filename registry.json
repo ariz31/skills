@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "library": "ariz31/skills",
+  "version": "0.1.0",
+  "router": "ROUTER.md",
+  "categories": [
+    {
+      "id": "orchestration",
+      "description": "Execution planning, delegation and coordination",
+      "subcategories": [
+        "delegation",
+        "planning",
+        "execution"
+      ]
+    },
+    {
+      "id": "civil-engineering",
+      "description": "Engineering analysis and design",
+      "subcategories": [
+        "structural",
+        "geotechnical",
+        "hydraulics",
+        "surveying",
+        "transportation",
+        "construction-management",
+        "materials-testing",
+        "environmental"
+      ]
+    },
+    {
+      "id": "education",
+      "description": "University teaching and learning",
+      "subcategories": [
+        "instructional-materials",
+        "assessment",
+        "curriculum",
+        "pedagogy"
+      ]
+    },
+    {
+      "id": "visualization",
+      "description": "Technical illustrations, models and simulations",
+      "subcategories": [
+        "2d-illustration",
+        "3d-modeling",
+        "interactive-simulations",
+        "cad"
+      ]
+    },
+    {
+      "id": "research",
+      "description": "Evidence retrieval and research methodology",
+      "subcategories": [
+        "literature-review",
+        "source-verification",
+        "methodology"
+      ]
+    },
+    {
+      "id": "data-analysis",
+      "description": "Statistical analysis and data processing",
+      "subcategories": [
+        "statistics",
+        "data-cleaning",
+        "data-visualization"
+      ]
+    },
+    {
+      "id": "artifact-production",
+      "description": "Deliverable construction and formatting",
+      "subcategories": [
+        "html",
+        "documents",
+        "spreadsheets",
+        "presentations",
+        "pdf"
+      ]
+    },
+    {
+      "id": "software-engineering",
+      "description": "Software implementation and architecture",
+      "subcategories": [
+        "implementation",
+        "debugging",
+        "architecture",
+        "performance"
+      ]
+    },
+    {
+      "id": "quality-assurance",
+      "description": "Verification and remediation",
+      "subcategories": [
+        "technical-audit",
+        "code-audit",
+        "artifact-audit",
+        "remediation"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "delegate",
+      "name": "Delegate",
+      "version": "1.0.0",
+      "status": "active",
+      "category": "orchestration",
+      "subcategory": "delegation",
+      "path": "skills/orchestration/delegate/SKILL.md",
+      "description": "Orchestrate complex work using specialized workers, isolated contracts, shared workspace coordination, and a strict evidence-based 9/10 final auditor gate.",
+      "triggers": [
+        "delegate",
+        "split the task",
+        "implement agents",
+        "use agents",
+        "run sub-agents",
+        "multi-agent",
+        "parallelize",
+        "divide and conquer",
+        "swarm",
+        "assign parts to multiple agents",
+        "complex multi-part deliverable requiring specialized workers and verification"
+      ],
+      "tags": [
+        "orchestration",
+        "agents",
+        "quality-gate",
+        "audit",
+        "rework",
+        "multi-part"
+      ],
+      "outputs": [
+        "markdown",
+        "html",
+        "pdf",
+        "docx",
+        "xlsx",
+        "source-code",
+        "structured-chat"
+      ],
+      "required_dependencies": [],
+      "optional_dependencies": [],
+      "capabilities": {
+        "preferred": [
+          "native-subagents",
+          "shared-workspace",
+          "artifact-verification"
+        ],
+        "fallback": "sequential role-based execution with non-independent self-review explicitly disclosed"
+      },
+      "platforms": [
+        "gemini-chat",
+        "gemini-task",
+        "chatgpt-chat",
+        "chatgpt-work"
+      ],
+      "references": [
+        "skills/orchestration/delegate/references/audit-contract.md"
+      ],
+      "adapters": {
+        "gemini-task": "skills/orchestration/delegate/adapters/gemini-task.md"
+      }
+    }
+  ]
+}
