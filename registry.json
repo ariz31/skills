@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library": "ariz31/skills",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "router": "ROUTER.md",
   "categories": [
     {
@@ -44,7 +44,8 @@
         "2d-illustration",
         "3d-modeling",
         "interactive-simulations",
-        "cad"
+        "cad",
+        "animation"
       ]
     },
     {
@@ -297,6 +298,86 @@
       "adapters": {
         "gemini-task": "skills/orchestration/ask/adapters/gemini-task.md"
       }
+    },
+    {
+      "id": "animate",
+      "name": "Animate",
+      "version": "1.0.0",
+      "status": "active",
+      "category": "visualization",
+      "subcategory": "animation",
+      "path": "skills/visualization/animation/animate/SKILL.md",
+      "description": "Create technically accurate phase-based animations and interactive simulations with deterministic timelines, adaptive renderers, minimal fullscreen playback UI, mandatory Delegate and a strict 95/100 gate.",
+      "triggers": [
+        "@animate",
+        "/animate",
+        "animate",
+        "animation",
+        "animated simulation",
+        "phase-based animation",
+        "process animation",
+        "construction sequence animation",
+        "animated mechanism",
+        "motion visualization",
+        "time-lapse animation",
+        "animate a 3d model",
+        "animation refinement",
+        "animated educational demonstration"
+      ],
+      "tags": [
+        "animation",
+        "timeline",
+        "simulation",
+        "physics",
+        "threejs",
+        "svg",
+        "canvas",
+        "css",
+        "education",
+        "civil-engineering",
+        "fullscreen",
+        "playback",
+        "deterministic",
+        "delegate",
+        "audit"
+      ],
+      "outputs": [
+        "html",
+        "source-code",
+        "video",
+        "gif"
+      ],
+      "required_dependencies": [
+        "delegate"
+      ],
+      "optional_dependencies": [
+        "3d"
+      ],
+      "capabilities": {
+        "preferred": [
+          "native-subagents",
+          "shared-workspace",
+          "file-creation",
+          "javascript-execution",
+          "browser-rendering",
+          "artifact-verification"
+        ],
+        "fallback": "Delegate sequential role-based execution and explicitly labeled self-review; static inspection and complete HTML source or file where supported; disclose unverified runtime behavior and unavailable exports."
+      },
+      "platforms": [
+        "gemini-chat",
+        "gemini-task",
+        "chatgpt-chat",
+        "chatgpt-work"
+      ],
+      "references": [
+        "skills/visualization/animation/animate/references/timeline-engine.md",
+        "skills/visualization/animation/animate/references/motion-physics.md",
+        "skills/visualization/animation/animate/references/presentation-ui.md",
+        "skills/visualization/animation/animate/references/rendering-performance.md",
+        "skills/visualization/animation/animate/references/audit-protocol.md"
+      ],
+      "adapters": {}
     }
   ]
 }

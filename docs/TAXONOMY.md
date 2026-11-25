@@ -7,7 +7,7 @@ Categories and subcategories organize the library; they are not executable instr
 | orchestration | delegation, planning, execution |
 | civil-engineering | structural, geotechnical, hydraulics, surveying, transportation, construction-management, materials-testing, environmental |
 | education | instructional-materials, assessment, curriculum, pedagogy |
-| visualization | 2d-illustration, 3d-modeling, interactive-simulations, cad |
+| visualization | 2d-illustration, 3d-modeling, interactive-simulations, cad, animation |
 | research | literature-review, source-verification, methodology |
 | data-analysis | statistics, data-cleaning, data-visualization |
 | artifact-production | html, documents, spreadsheets, presentations, pdf |
