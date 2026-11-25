@@ -16,6 +16,7 @@ The repository is not an automatically installed plugin. The assistant must have
 - [Authoring standard](docs/SKILL_STANDARD.md): contracts and contribution requirements.
 - [Platform profiles](platforms/README.md): capability-aware execution.
 - [Delegate](skills/orchestration/delegate/SKILL.md): multi-agent coordination and strict auditing.
+- [Three.js Modeling](skills/visualization/3d-modeling/threejs-modeling/SKILL.md): source-grounded interactive 3D models with a 95/100 technical quality gate. Invoke with 3D, Three.js, threejs or related modeling terms.
 
 ## Gemini native installation
 
@@ -23,7 +24,7 @@ When the interface supports native skills, users may choose to install an indivi
 
 ## Status
 
-The foundation and Delegate skill are the initial release. Other categories are reserved for future specialized skills; they are not implemented merely by being listed. Platform functionality is capability-dependent and must be checked at runtime.
+The active skills are Delegate and Three.js Modeling. Other categories and subcategories are reserved for future specialized skills; they are not implemented merely by being listed. Platform functionality is capability-dependent and must be checked at runtime.
 
 ## Design principles
 

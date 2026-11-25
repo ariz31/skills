@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library": "ariz31/skills",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "router": "ROUTER.md",
   "categories": [
     {
@@ -159,6 +159,90 @@
       "adapters": {
         "gemini-task": "skills/orchestration/delegate/adapters/gemini-task.md"
       }
+    },
+    {
+      "id": "threejs-modeling",
+      "name": "Three.js Modeling",
+      "version": "1.0.0",
+      "status": "active",
+      "category": "visualization",
+      "subcategory": "3d-modeling",
+      "path": "skills/visualization/3d-modeling/threejs-modeling/SKILL.md",
+      "description": "Create engineering-accurate, source-grounded high-fidelity interactive Three.js models, defaulting to single HTML, with parametric geometry and a strict 95/100 audit gate.",
+      "triggers": [
+        "3d",
+        "3-d",
+        "three dimensional",
+        "three-dimensional",
+        "three.js",
+        "threejs",
+        "three js",
+        "3d model",
+        "3d modeling",
+        "3d visualization",
+        "3d simulation",
+        "interactive 3d",
+        "3d cad",
+        "webgl model",
+        "3d reconstruction",
+        "3d terrain",
+        "bim visualization",
+        "digital twin",
+        "parametric 3d geometry",
+        "3d cutaway",
+        "cutaway model",
+        "exploded view",
+        "3d rendering",
+        "threejs model repair or refinement"
+      ],
+      "tags": [
+        "3d",
+        "threejs",
+        "webgl",
+        "geometry",
+        "parametric",
+        "architecture",
+        "structural",
+        "infrastructure",
+        "civil-engineering",
+        "terrain",
+        "mechanical",
+        "education",
+        "simulation",
+        "html",
+        "visualization",
+        "cad",
+        "audit"
+      ],
+      "outputs": [
+        "html",
+        "source-code"
+      ],
+      "required_dependencies": [],
+      "optional_dependencies": [
+        "delegate"
+      ],
+      "capabilities": {
+        "preferred": [
+          "file-creation",
+          "javascript-execution",
+          "browser-rendering",
+          "source-retrieval"
+        ],
+        "fallback": "Complete HTML source or saved artifact where possible; static geometry/source review with explicit limitations when runtime or independent verification is unavailable."
+      },
+      "platforms": [
+        "gemini-chat",
+        "gemini-task",
+        "chatgpt-chat",
+        "chatgpt-work"
+      ],
+      "references": [
+        "skills/visualization/3d-modeling/threejs-modeling/references/geometry-protocol.md",
+        "skills/visualization/3d-modeling/threejs-modeling/references/rendering-delivery.md",
+        "skills/visualization/3d-modeling/threejs-modeling/references/audit-protocol.md"
+      ],
+      "adapters": {}
     }
   ]
 }
