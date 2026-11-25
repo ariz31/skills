@@ -10,4 +10,6 @@ The same dynamic invocation works when repository retrieval is available. If the
 
 For Delegate, use the canonical skill and the Gemini Task adapter if native sub-agent tools are exposed. Include audit-contract.md if the installation supports supporting files. If the host cannot resolve repository-relative references, provide the required reference content with the installation.
 
+For Ask, use the canonical skill and the Gemini Task adapter if a native structured multiple-choice question tool is exposed; otherwise rely on the portable Markdown fallback.
+
 Feature availability and UI vary by plan, host and rollout; this repository does not guarantee a specific install button or tool interface.

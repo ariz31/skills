@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library": "ariz31/skills",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "router": "ROUTER.md",
   "categories": [
     {
@@ -243,6 +243,55 @@
         "skills/visualization/3d-modeling/threejs-modeling/references/audit-protocol.md"
       ],
       "adapters": {}
+    },
+    {
+      "id": "ask",
+      "name": "Ask",
+      "version": "1.0.0",
+      "status": "active",
+      "category": "orchestration",
+      "subcategory": "planning",
+      "path": "skills/orchestration/ask/SKILL.md",
+      "description": "Clarify intent and resolve ambiguity before implementing anything using concise multiple-choice questions, explicit assumptions, and an Intent Check summary.",
+      "triggers": [
+        "@ask",
+        "/ask",
+        "ask me first",
+        "give me ideas",
+        "brainstorm",
+        "high-ambiguity request before implementation"
+      ],
+      "tags": [
+        "orchestration",
+        "planning",
+        "clarification",
+        "ideation",
+        "intent-verification",
+        "multiple-choice"
+      ],
+      "outputs": [
+        "structured-chat"
+      ],
+      "required_dependencies": [],
+      "optional_dependencies": [
+        "delegate"
+      ],
+      "capabilities": {
+        "preferred": [
+          "structured-questions"
+        ],
+        "fallback": "concise lettered multiple-choice options in plain Markdown with explicit assumptions and an Intent Check summary"
+      },
+      "platforms": [
+        "gemini-chat",
+        "gemini-task",
+        "chatgpt-chat",
+        "chatgpt-work"
+      ],
+      "references": [],
+      "adapters": {
+        "gemini-task": "skills/orchestration/ask/adapters/gemini-task.md"
+      }
     }
   ]
 }
