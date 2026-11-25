@@ -1,15 +1,15 @@
 ---
-name: threejs-modeling
-description: Create engineering-accurate, source-grounded, high-fidelity interactive Three.js models, defaulting to a single HTML file. Activate for 3D, three dimensional, Three.js, threejs, WebGL modeling, 3D CAD, building or terrain reconstruction, interactive 3D simulations, parametric geometry, cutaways and exploded models when the task calls for a 3D artifact.
+name: 3d
+description: Create engineering-accurate, source-grounded, high-fidelity interactive Three.js models, defaulting to a single HTML file. Activate explicitly with @3d or /3d, or contextually for 3D, three dimensional, Three.js, threejs, WebGL modeling, 3D CAD, building or terrain reconstruction, interactive 3D simulations, parametric geometry, cutaways and exploded models when the task calls for a 3D artifact.
 ---
 
-# Three.js Modeling
+# 3D
 
 ## Objective and activation
 
 Produce the highest defensible geometric accuracy and visual fidelity for the source evidence and intended use. Default deliverable: a working interactive Three.js model in a single HTML file. Maintain editable parametric source geometry and semantic component metadata.
 
-Recognize 3D, 3-D, three dimensional, three-dimensional, Three.js, threejs, THREE JS, 3D model, 3D visualization, 3D simulation, WebGL model, 3D reconstruction, 3D CAD, 3D terrain, BIM visualization, digital twin, cutaway and exploded view; match case-insensitively and semantically. A bare "3D" or "Three.js" invokes this skill; if no modeling subject is known, ask for the subject. Automatically activate for creation, refinement, repair, verification or conversion of 3D models; no exact skill name is required. Do not divert purely informational questions, image-only requests or incidental mentions of 3D into model creation. Honor explicit output constraints.
+Recognize `@3d` and `/3d` as explicit commands (case-insensitive), including when combined with other skill commands. The former skill name `threejs-modeling` and its `@threejs-modeling` and `/threejs-modeling` forms remain invocation aliases. Recognize 3D, 3-D, three dimensional, three-dimensional, Three.js, threejs, THREE JS, 3D model, 3D visualization, 3D simulation, WebGL model, 3D reconstruction, 3D CAD, 3D terrain, BIM visualization, digital twin, cutaway and exploded view; match case-insensitively and semantically. A bare `@3d`, `/3d`, "3D" or "Three.js" invokes this skill; if no modeling subject is known, ask for the subject. Automatically activate for creation, refinement, repair, verification or conversion of 3D models; no exact skill name is required. Explicit invocation selects this skill, but does not override the user's requested output or justify creating an unsolicited model. Do not divert purely informational questions, image-only requests or incidental mentions of 3D into model creation. Honor explicit output constraints.
 
 ## 1. Define the modeling contract
 

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library": "ariz31/skills",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "router": "ROUTER.md",
   "categories": [
     {
@@ -161,15 +161,20 @@
       }
     },
     {
-      "id": "threejs-modeling",
-      "name": "Three.js Modeling",
-      "version": "1.0.0",
+      "id": "3d",
+      "name": "3D",
+      "version": "2.0.0",
       "status": "active",
       "category": "visualization",
       "subcategory": "3d-modeling",
-      "path": "skills/visualization/3d-modeling/threejs-modeling/SKILL.md",
+      "path": "skills/visualization/3d-modeling/3d/SKILL.md",
       "description": "Create engineering-accurate, source-grounded high-fidelity interactive Three.js models, defaulting to single HTML, with parametric geometry and a strict 95/100 audit gate.",
       "triggers": [
+        "@3d",
+        "/3d",
+        "threejs-modeling",
+        "@threejs-modeling",
+        "/threejs-modeling",
         "3d",
         "3-d",
         "three dimensional",
@@ -238,9 +243,9 @@
         "chatgpt-work"
       ],
       "references": [
-        "skills/visualization/3d-modeling/threejs-modeling/references/geometry-protocol.md",
-        "skills/visualization/3d-modeling/threejs-modeling/references/rendering-delivery.md",
-        "skills/visualization/3d-modeling/threejs-modeling/references/audit-protocol.md"
+        "skills/visualization/3d-modeling/3d/references/geometry-protocol.md",
+        "skills/visualization/3d-modeling/3d/references/rendering-delivery.md",
+        "skills/visualization/3d-modeling/3d/references/audit-protocol.md"
       ],
       "adapters": {}
     },

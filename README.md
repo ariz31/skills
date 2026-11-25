@@ -17,7 +17,7 @@ The repository is not an automatically installed plugin. The assistant must have
 - [Platform profiles](platforms/README.md): capability-aware execution.
 - [Ask](skills/orchestration/ask/SKILL.md): intent clarification, multiple-choice disambiguation, explicit assumptions, and pre-implementation verification. Invoke with `@ask`, `/ask`, ideation prompts, or high-ambiguity requests.
 - [Delegate](skills/orchestration/delegate/SKILL.md): multi-agent coordination and strict auditing.
-- [Three.js Modeling](skills/visualization/3d-modeling/threejs-modeling/SKILL.md): source-grounded interactive 3D models with a 95/100 technical quality gate. Invoke with 3D, Three.js, threejs or related modeling terms.
+- [3D](skills/visualization/3d-modeling/3d/SKILL.md): source-grounded interactive 3D models with a 95/100 technical quality gate. Invoke with `@3d`, `/3d`, 3D, Three.js, threejs or related modeling terms. The former skill name `threejs-modeling` remains an invocation alias.
 
 ## Gemini native installation
 
@@ -25,7 +25,7 @@ When the interface supports native skills, users may choose to install an indivi
 
 ## Status
 
-The active skills are Ask, Delegate, and Three.js Modeling. Other categories and subcategories are reserved for future specialized skills; they are not implemented merely by being listed. Platform functionality is capability-dependent and must be checked at runtime.
+The active skills are Ask, Delegate, and 3D. Other categories and subcategories are reserved for future specialized skills; they are not implemented merely by being listed. Platform functionality is capability-dependent and must be checked at runtime.
 
 ## Design principles
 

@@ -1,9 +1,14 @@
-# Three.js skill evaluation specifications
+# 3D skill evaluation specifications
 
 These scenarios are specifications, not executed platform test results.
 
 | Input / condition | Expected behavior |
 |---|---|
+| `@3d model a two-storey house` | Explicitly activate canonical `3d` skill; retain Three.js HTML workflow. |
+| `/3d model a bridge` | Explicitly activate canonical `3d` skill. |
+| `@3D` without context | Match case-insensitively; ask only for missing subject. |
+| `@ask /3d design a teaching model` | Select both skills; run Ask before implementation when confirmation is needed. |
+| `threejs-modeling` or `@threejs-modeling` | Resolve legacy invocation alias to canonical `3d`; load once. |
 | "3D model of a two-storey house" | Activate skill; single interactive HTML by default; dimensions, exterior/interior and source assumptions. |
 | "threejs residential solar setup; hide house" | Activate; component layers and functioning solar-only mode; no invented electrical specifications. |
 | "3-D terrain of Burnham Park with nearby streets" | Activate; geospatial sources, CRS/datum and source-resolution limits; no fabricated survey accuracy. |

@@ -85,7 +85,7 @@ Critical defects (must fix before proceeding):
 
 - **If the user replies "just go ahead" or "you decide":** Lock in your disclosed assumptions, briefly note them, and move straight to implementation without another round of questions.
 - **If the user gives a partial answer:** Assume sensible defaults for any unanswered secondary questions, disclose them in the **Intent Check**, and avoid dragging out more than 2 clarification rounds unless a hard blocker remains.
-- **When composing with other skills:** Run `ask` first to lock the specification, then hand the verified **Intent Check** into downstream skills (such as `delegate`, `threejs-modeling`, or domain skills).
+- **When composing with other skills:** Run `ask` first to lock the specification, then hand the verified **Intent Check** into downstream skills (such as `delegate`, `3d`, or domain skills).
 
 ## Gotchas
 
