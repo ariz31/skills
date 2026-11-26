@@ -15,3 +15,5 @@ For Ask, use the canonical skill and the Gemini Task adapter if a native structu
 For Animate, make the canonical skill, its references and the required Delegate skill available; also include 3D for three-dimensional animation. Install only on explicit user request. If the host cannot resolve dependencies, retrieve or provide their instructions and use the documented capability fallback.
 
 Feature availability and UI vary by plan, host and rollout; this repository does not guarantee a specific install button or tool interface.
+
+For Max, include its goal audit contract, required Delegate instructions and applicable adapters; use the bounded sequential fallback when native independent workers are unavailable. For Review, include Delegate and the rubric/dashboard references, preserving read-only source authorization. For MSDeck, include its navigation, media and verification references; include 3D, Animate or Delegate only when selected (Animate requires Delegate). Missing essential supporting instructions must be retrieved or disclosed; native installation remains optional and explicitly user-controlled.

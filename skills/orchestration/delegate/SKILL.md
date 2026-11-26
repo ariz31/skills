@@ -90,3 +90,7 @@ Detect the actual tools for dispatch, status, messaging, workspace and delivery.
 - **Isolate worker failures:** Never discard good workstreams when one worker fails or stalls; replace or re-prompt only the failing slice.
 - **Avoid infinite loops on hard blockers:** If a deliverable fails to reach 9/10 after 3 consecutive revision cycles due to missing user input, an inaccessible external source, or contradictory requirements, stop blind retries and identify the blocker or ask the user to resolve it. Stop earlier if further work is impossible.
 - **Match delivery to format:** Do not paste long .md or .html deliverables into chat when a standalone file is expected, and verify the file exists and is accessible before presenting it.
+
+## Composition boundaries
+
+When used by a higher-order coordinator such as Max, run the requested cycle under the shared execution budget and keep intermediate accepted candidates internal until the outer gate is resolved. Do not create nested worker coordinators or independently reset retry budgets. When used by Review or a read-only audit, workers inspect only the audited source; remediation targets the report, not the source, unless the user separately authorizes source edits. Apply the 9/10 gate to the requested deliverable (the report for an audit), not to the source's separate verdict. When embedded in a larger artifact, coordinate on the integrated final candidate and honor all selected skill gates and artifact ownership.
