@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library": "ariz31/skills",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "router": "ROUTER.md",
   "categories": [
     {
@@ -376,6 +376,195 @@
         "skills/visualization/animation/animate/references/presentation-ui.md",
         "skills/visualization/animation/animate/references/rendering-performance.md",
         "skills/visualization/animation/animate/references/audit-protocol.md"
+      ],
+      "adapters": {}
+    },
+    {
+      "id": "max",
+      "name": "Max",
+      "version": "1.0.0",
+      "status": "active",
+      "category": "orchestration",
+      "subcategory": "execution",
+      "path": "skills/orchestration/max/SKILL.md",
+      "description": "Two coordinated Delegate cycles and a fresh holistic goal audit with a scoped 10/10 gate and at most three outer remediation rounds.",
+      "triggers": [
+        "@max",
+        "/max",
+        "maximum rigor",
+        "multi-cycle verified execution",
+        "zero-defect multi-agent delivery",
+        "double delegate cycle",
+        "independent goal audit"
+      ],
+      "tags": [
+        "orchestration",
+        "execution",
+        "agents",
+        "quality-gate",
+        "zero-defect",
+        "multi-cycle",
+        "audit",
+        "delegate"
+      ],
+      "outputs": [
+        "markdown",
+        "html",
+        "pdf",
+        "docx",
+        "xlsx",
+        "source-code",
+        "structured-chat"
+      ],
+      "required_dependencies": [
+        "delegate"
+      ],
+      "optional_dependencies": [
+        "ask"
+      ],
+      "capabilities": {
+        "preferred": [
+          "native-subagents",
+          "shared-workspace",
+          "artifact-verification"
+        ],
+        "fallback": "Two bounded sequential role-based Delegate cycles and a separate holistic self-review; disclose non-independence, blockers and unverified checks."
+      },
+      "platforms": [
+        "gemini-chat",
+        "gemini-task",
+        "chatgpt-chat",
+        "chatgpt-work"
+      ],
+      "references": [
+        "skills/orchestration/max/references/goal-audit-contract.md"
+      ],
+      "adapters": {
+        "gemini-task": "skills/orchestration/max/adapters/gemini-task.md"
+      }
+    },
+    {
+      "id": "msdeck",
+      "name": "MSDeck",
+      "version": "1.0.0",
+      "status": "active",
+      "category": "artifact-production",
+      "subcategory": "presentations",
+      "path": "skills/artifact-production/presentations/msdeck/SKILL.md",
+      "description": "Minimalist interactive single-file 16:9 HTML learning decks with edge-tap/swipe navigation, synchronized stepped solutions, integrated simulations and verified zoomable media.",
+      "triggers": [
+        "@msdeck",
+        "/msdeck",
+        "msdeck",
+        "minimalist interactive html slide deck",
+        "swipeable presentation",
+        "edge-tap slide deck",
+        "visual learning presentation",
+        "single-file html slide deck"
+      ],
+      "tags": [
+        "presentations",
+        "html",
+        "slide-deck",
+        "education",
+        "interactive-simulations",
+        "step-by-step",
+        "minimalist-ui",
+        "swipe",
+        "lightbox",
+        "visualization"
+      ],
+      "outputs": [
+        "html",
+        "source-code"
+      ],
+      "required_dependencies": [],
+      "optional_dependencies": [
+        "delegate",
+        "3d",
+        "animate"
+      ],
+      "capabilities": {
+        "preferred": [
+          "file-creation",
+          "javascript-execution",
+          "browser-rendering",
+          "source-retrieval"
+        ],
+        "fallback": "Complete HTML source with accurate inline SVG when retrieval unavailable; static inspection with explicit unverified runtime/viewport behavior."
+      },
+      "platforms": [
+        "gemini-chat",
+        "gemini-task",
+        "chatgpt-chat",
+        "chatgpt-work"
+      ],
+      "references": [
+        "skills/artifact-production/presentations/msdeck/references/navigation-and-stage.md",
+        "skills/artifact-production/presentations/msdeck/references/media-and-stepped-solutions.md",
+        "skills/artifact-production/presentations/msdeck/references/verification-gate.md"
+      ],
+      "adapters": {}
+    },
+    {
+      "id": "review",
+      "name": "Review",
+      "version": "1.0.0",
+      "status": "active",
+      "category": "quality-assurance",
+      "subcategory": "artifact-audit",
+      "path": "skills/quality-assurance/review/SKILL.md",
+      "description": "Read-only evidence-based adversarial artifact audit using Delegate, adaptive rubrics, actionable findings and an interactive HTML dashboard or requested report format.",
+      "triggers": [
+        "@review",
+        "/review",
+        "@reviewer",
+        "/reviewer",
+        "critical review",
+        "red-team audit",
+        "rubric evaluation",
+        "interactive review report",
+        "adversarial review"
+      ],
+      "tags": [
+        "quality-assurance",
+        "artifact-audit",
+        "red-team",
+        "rubric",
+        "critical-review",
+        "html-dashboard",
+        "delegate",
+        "audit"
+      ],
+      "outputs": [
+        "html",
+        "markdown",
+        "structured-chat"
+      ],
+      "required_dependencies": [
+        "delegate"
+      ],
+      "optional_dependencies": [
+        "ask"
+      ],
+      "capabilities": {
+        "preferred": [
+          "native-subagents",
+          "shared-workspace",
+          "file-creation",
+          "artifact-verification"
+        ],
+        "fallback": "Sequential adversarial lenses with non-independent self-review disclosed; complete HTML source or requested structured Markdown/chat; disclose unverified runtime."
+      },
+      "platforms": [
+        "gemini-chat",
+        "gemini-task",
+        "chatgpt-chat",
+        "chatgpt-work"
+      ],
+      "references": [
+        "skills/quality-assurance/review/references/rubric-and-scoring.md",
+        "skills/quality-assurance/review/references/dashboard-ui-spec.md"
       ],
       "adapters": {}
     }

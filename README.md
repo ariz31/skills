@@ -20,13 +20,17 @@ The repository is not an automatically installed plugin. The assistant must have
 - [3D](skills/visualization/3d-modeling/3d/SKILL.md): source-grounded interactive 3D models with a 95/100 technical quality gate. Invoke with `@3d`, `/3d`, 3D, Three.js, threejs or related modeling terms. The former skill name `threejs-modeling` remains an invocation alias.
 - [Animate](skills/visualization/animation/animate/SKILL.md): phase-based animations and simulations with deterministic playback, minimal fullscreen UI and a 95/100 audit. Invoke with `@animate`, `/animate` or animation requests; automatically composes with Delegate and 3D when applicable.
 
+- [Max](skills/orchestration/max/SKILL.md): two coordinated Delegate cycles, holistic 10/10 goal audit and bounded remediation. Invoke with `@max` or `/max`.
+- [MSDeck](skills/artifact-production/presentations/msdeck/SKILL.md): minimalist interactive 16:9 HTML learning presentations with step navigation, simulations and zoomable media. Invoke with `@msdeck` or `/msdeck`.
+- [Review](skills/quality-assurance/review/SKILL.md): read-only adversarial review and evidence-based scoring with interactive HTML dashboard or requested report format. Invoke with `@review`, `/review`, `@reviewer` or `/reviewer`.
+
 ## Gemini native installation
 
 When the interface supports native skills, users may choose to install an individual skill using its SKILL.md and any needed adapter/reference files. See [installation guidance](docs/INSTALLATION.md). Do not automatically create or install native skills.
 
 ## Status
 
-The active skills are Ask, Delegate, 3D, and Animate. Other categories and subcategories are reserved for future specialized skills; they are not implemented merely by being listed. Platform functionality is capability-dependent and must be checked at runtime.
+The active skills are Ask, Delegate, Max, 3D, Animate, MSDeck, and Review. Other categories and subcategories are reserved for future specialized skills; they are not implemented merely by being listed. Platform functionality is capability-dependent and must be checked at runtime.
 
 ## Design principles
 

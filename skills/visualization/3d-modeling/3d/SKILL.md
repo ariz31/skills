@@ -72,3 +72,7 @@ PASS requires at least 95/100 AND no critical defects or unverified essential re
 - For complex jobs, optionally compose with Delegate. Preserve its worker contracts and independent audit when available. The stricter 95/100 Three.js gate still applies; Delegate's 9/10 gate cannot override it. Do not assume agents or browsers exist.
 - On Gemini Task/ChatGPT Work, use actual available workspace, browser and worker tools to verify the file. On chat-only environments, use real execution tools where available; otherwise perform static review and disclose missing runtime or independent checks. Native installation is optional; this main file contains the core workflow even if supporting references cannot be loaded.
 - Deliver the artifact, concise instructions for opening it, scope/assumptions, and actual audit score/verdict and verification limitations. This is not a professional engineering certification.
+
+## Embedded and audit-only composition
+
+When a presentation skill owns the requested single-file artifact, supply a scoped scene/component rather than a second HTML document; the shell owns stage, navigation and global fullscreen, while 3D owns geometry, camera, local rendering and model interactions. Define mount/resize/activate/deactivate/reset/dispose behavior, preserve logical canvas dimensions and local gesture ownership, pause inactive rendering, and verify the integrated candidate. For audit-only requests, inspect the existing source and apply the 3D rubric without unsolicited rebuilding or modification.
