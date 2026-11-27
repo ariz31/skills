@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library": "ariz31/skills",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "router": "ROUTER.md",
   "categories": [
     {
@@ -567,6 +567,74 @@
         "skills/quality-assurance/review/references/dashboard-ui-spec.md"
       ],
       "adapters": {}
+    },
+    {
+      "id": "estimate",
+      "name": "Estimate",
+      "version": "1.0.0",
+      "status": "active",
+      "category": "civil-engineering",
+      "subcategory": "construction-management",
+      "path": "skills/civil-engineering/construction-management/estimate/SKILL.md",
+      "description": "Prepare source-traceable construction cost estimates, BOQ/BOM, unit price lists and permit-inclusive project pricing with mandatory Delegate, tax normalization and zero-variance reconciliation.",
+      "triggers": [
+        "@estimate",
+        "/estimate",
+        "cost estimate",
+        "boq",
+        "bom",
+        "bill of quantities",
+        "bill of materials",
+        "unit price list",
+        "project pricing report"
+      ],
+      "tags": [
+        "civil-engineering",
+        "construction-management",
+        "quantity-takeoff",
+        "cost-estimation",
+        "boq",
+        "bom",
+        "unit-pricing",
+        "permits",
+        "vat",
+        "delegate",
+        "reconciliation"
+      ],
+      "outputs": [
+        "markdown",
+        "pdf",
+        "xlsx",
+        "structured-chat"
+      ],
+      "required_dependencies": [
+        "delegate"
+      ],
+      "optional_dependencies": [
+        "ask"
+      ],
+      "capabilities": {
+        "preferred": [
+          "native-subagents",
+          "source-retrieval",
+          "file-creation",
+          "artifact-verification"
+        ],
+        "fallback": "Four sequential role passes with non-independent self-review; labeled benchmark or assumed rates, structured output and disclosed missing evidence/artifacts when tools unavailable."
+      },
+      "platforms": [
+        "gemini-chat",
+        "gemini-task",
+        "chatgpt-chat",
+        "chatgpt-work"
+      ],
+      "references": [
+        "skills/civil-engineering/construction-management/estimate/references/ph-compliance-and-vat.md",
+        "skills/civil-engineering/construction-management/estimate/references/reconciliation-and-audit.md"
+      ],
+      "adapters": {
+        "gemini-task": "skills/civil-engineering/construction-management/estimate/adapters/gemini-task.md"
+      }
     }
   ]
 }

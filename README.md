@@ -24,13 +24,15 @@ The repository is not an automatically installed plugin. The assistant must have
 - [MSDeck](skills/artifact-production/presentations/msdeck/SKILL.md): minimalist interactive 16:9 HTML learning presentations with step navigation, simulations and zoomable media. Invoke with `@msdeck` or `/msdeck`.
 - [Review](skills/quality-assurance/review/SKILL.md): read-only adversarial review and evidence-based scoring with interactive HTML dashboard or requested report format. Invoke with `@review`, `/review`, `@reviewer` or `/reviewer`.
 
+- [Estimate](skills/civil-engineering/construction-management/estimate/SKILL.md): construction cost estimates, BOQ/BOM, unit pricing, Philippine permit/VAT planning and zero-variance reconciliation with mandatory Delegate. Invoke with `@estimate` or `/estimate`.
+
 ## Gemini native installation
 
 When the interface supports native skills, users may choose to install an individual skill using its SKILL.md and any needed adapter/reference files. See [installation guidance](docs/INSTALLATION.md). Do not automatically create or install native skills.
 
 ## Status
 
-The active skills are Ask, Delegate, Max, 3D, Animate, MSDeck, and Review. Other categories and subcategories are reserved for future specialized skills; they are not implemented merely by being listed. Platform functionality is capability-dependent and must be checked at runtime.
+The active skills are Ask, Delegate, Max, 3D, Animate, MSDeck, Review, and Estimate. Other categories and subcategories are reserved for future specialized skills; they are not implemented merely by being listed. Platform functionality is capability-dependent and must be checked at runtime.
 
 ## Design principles
 
