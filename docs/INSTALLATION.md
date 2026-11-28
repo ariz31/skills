@@ -1,19 +1,20 @@
 # Invocation and optional installation
 
-## ChatGPT Chat / Work
+## Dynamic invocation (read-only default)
+Use the README prompt; pin the default-branch commit and retrieve ROUTER.md, registry.json, docs/INVARIANTS.md and selected skills/references. Runtime invocation never calls native save/update. No installation is required.
 
-Invoke using the README prompt. With authorized repository access, the assistant retrieves ROUTER.md, registry.json and matching skill files at runtime. This does not create a persistent skill or grant tools. If retrieval is unavailable, attach the necessary files or paste them. In a reusable project, the invocation instruction can be saved as project guidance if the interface supports it.
+## Explicit install, sync, and update commands
+Commands are case-insensitive. Only explicit user requests trigger writes:
+- install ariz31/skills: all active skills.
+- install ariz31/skills <id> (space/comma-separated IDs or aliases): selected skills and transitive required dependencies; ask whether relevant optional dependencies should be installed.
+- sync ariz31/skills: inventory missing and drifted active skills, show diff, confirm before updates; leave local-only skills untouched.
+- update ariz31/skills [id]: refresh matching already-installed skills only; show local vs remote version/commit/content and obtain confirmation.
 
-## Gemini Chat / Task
+## Duplicate protection and dependency order
+Inventory installed user:<id> before writes. For existing skills or already_exists, stop for that skill and present ID, local file/version state, pinned remote version and key differences. Ask Update, Skip or Install under a user-supplied alternate name. Never auto-overwrite, re-enable disabled skills, or delete local-only skills. Install required dependencies first in topological order. Conditional Animate dependencies are resolved at runtime (see its SKILL.md). For alternate names use --rename <new_name> with one selected skill. Retire superseded local browser QA only on explicit confirmation, through available enable/disable tools or host UI.
 
-The same dynamic invocation works when repository retrieval is available. If the user explicitly wants to install a skill and the current interface offers native skills, choose the specific skill, review its SKILL.md and supporting files, and use the available native import/create mechanism. If the interface requires a package or different format, adapt the chosen skill to that format without changing the canonical repository. Never silently install or generate a native skill. No native installation is necessary for dynamic invocation.
+## Gemini Task native installation
+Inspect actual signatures. Single-file packages: skills:save_skill(content=...), or confirmed skills:update_skill(name=..., content=...). Multi-file: python3 scripts/package_skill.py --skill <id> --platform gemini-task --format dir --output-dir /tmp/ariz31_staged; use its resolved absolute skill_dir with skills:save_skill or confirmed skills:update_skill(name=..., skill_dir=...). Bundle invariants by default. Check response status: created/updated record ID, version, commit and files; already_exists stop and confirm; error disclose exact error and fallback. Verify installed contents, enabled status and version using real inventory tools (lookup_skills/get_skill_resources where exposed); never claim parity without checking.
 
-For Delegate, use the canonical skill and the Gemini Task adapter if native sub-agent tools are exposed. Include audit-contract.md if the installation supports supporting files. If the host cannot resolve repository-relative references, provide the required reference content with the installation.
-
-For Ask, use the canonical skill and the Gemini Task adapter if a native structured multiple-choice question tool is exposed; otherwise rely on the portable Markdown fallback.
-
-For Animate, make the canonical skill, its references and the required Delegate skill available; also include 3D for three-dimensional animation. Install only on explicit user request. If the host cannot resolve dependencies, retrieve or provide their instructions and use the documented capability fallback.
-
-Feature availability and UI vary by plan, host and rollout; this repository does not guarantee a specific install button or tool interface.
-
-For Max, include its goal audit contract, required Delegate instructions and applicable adapters; use the bounded sequential fallback when native independent workers are unavailable. For Review, include Delegate and the rubric/dashboard references, preserving read-only source authorization. For MSDeck, include its navigation, media and verification references; include 3D, Animate or Delegate only when selected (Animate requires Delegate). Missing essential supporting instructions must be retrieved or disclosed; native installation remains optional and explicitly user-controlled.
+## ChatGPT and manual ZIP fallback
+If native tools unavailable, python3 scripts/package_skill.py --skill <id> --platform portable --format zip --output-dir dist (or --all, optionally --bundle-invariants). Deliver verified ZIP for manual host import/Project Files/Custom GPT Knowledge, not a claim of native installation. If shell unavailable, provide pinned raw.githubusercontent.com/ariz31/skills/<commit_sha>/<path> URLs for SKILL.md, invariants, adapters and references. Host support varies. Dynamic read-only invocation remains available.

@@ -10,7 +10,7 @@ These are test specifications, not executed platform test results.
 | What is animation? | Informational answer without unsolicited artifact creation. |
 | @ask @animate an ambiguous teaching app | Resolve Ask's intent confirmation before implementation workers or file mutations. |
 | Native worker tools absent | Delegate sequential fallback; no invented independent auditor. |
-| Required Delegate content inaccessible | Disclose blocker; do not claim compliant execution. |
+| Conditionally required Delegate content inaccessible for multi-phase or 3D animation | Disclose blocker; do not claim compliant execution. |
 | SVG explanation of hydrostatic pressure | Choose suitable 2D renderer; accurate equations and synchronized labels; no unnecessary 3d. |
 | Seismic response at 0.5x, 1x and 2x | Same physical state at the same simulation time; no changed solver step due to playback speed. |
 | Seek backward after fracture or component installation | Reconstruct correct topology and pre-event state; no residual mutation. |
@@ -25,3 +25,5 @@ These are test specifications, not executed platform test results.
 | Request GIF/video export without available codec | No fake export; disclose limit and deliver supported output. |
 | Audit 97/100 but wrong governing equation or broken seeking | FAIL regardless of score; fix and re-audit. |
 | Browser unavailable | Report static evidence and missing runtime proof; no fabricated playback certification. |
+
+| Animate a simple 2-state CSS/SVG toggle | Select animate without requiring delegate; apply the Animate 95/100 gate. |

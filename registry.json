@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library": "ariz31/skills",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "router": "ROUTER.md",
   "categories": [
     {
@@ -45,7 +45,8 @@
         "3d-modeling",
         "interactive-simulations",
         "cad",
-        "animation"
+        "animation",
+        "image-analysis"
       ]
     },
     {
@@ -102,7 +103,7 @@
     {
       "id": "delegate",
       "name": "Delegate",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "active",
       "category": "orchestration",
       "subcategory": "delegation",
@@ -164,7 +165,7 @@
     {
       "id": "3d",
       "name": "3D",
-      "version": "2.1.0",
+      "version": "2.2.0",
       "status": "active",
       "category": "visualization",
       "subcategory": "3d-modeling",
@@ -255,7 +256,7 @@
     {
       "id": "ask",
       "name": "Ask",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "status": "active",
       "category": "orchestration",
       "subcategory": "planning",
@@ -304,12 +305,12 @@
     {
       "id": "animate",
       "name": "Animate",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "status": "active",
       "category": "visualization",
       "subcategory": "animation",
       "path": "skills/visualization/animation/animate/SKILL.md",
-      "description": "Create technically accurate phase-based animations and interactive simulations with deterministic timelines, adaptive renderers, minimal fullscreen playback UI, mandatory Delegate and a strict 95/100 gate.",
+      "description": "Create technically accurate phase-based animations and interactive simulations with deterministic timelines, adaptive renderers, minimal fullscreen playback UI, conditional Delegate (required for multi-phase/3D/physics or complex UI/export; optional for simple 2D) and a strict 95/100 gate.",
       "triggers": [
         "@animate",
         "/animate",
@@ -349,10 +350,9 @@
         "video",
         "gif"
       ],
-      "required_dependencies": [
-        "delegate"
-      ],
+      "required_dependencies": [],
       "optional_dependencies": [
+        "delegate",
         "3d"
       ],
       "capabilities": {
@@ -364,7 +364,7 @@
           "browser-rendering",
           "artifact-verification"
         ],
-        "fallback": "Delegate sequential role-based execution and explicitly labeled self-review; static inspection and complete HTML source or file where supported; disclose unverified runtime behavior and unavailable exports."
+        "fallback": "Single-agent fast path for simple 2D; Delegate sequential role passes when active, with explicit SELF-REVIEW; static checks and disclosure of unverified playback/export."
       },
       "platforms": [
         "gemini-chat",
@@ -450,7 +450,7 @@
     {
       "id": "msdeck",
       "name": "MSDeck",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "status": "active",
       "category": "artifact-production",
       "subcategory": "presentations",
@@ -579,7 +579,7 @@
     {
       "id": "estimate",
       "name": "Estimate",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "status": "active",
       "category": "civil-engineering",
       "subcategory": "construction-management",
@@ -642,6 +642,123 @@
       ],
       "adapters": {
         "gemini-task": "skills/civil-engineering/construction-management/estimate/adapters/gemini-task.md"
+      }
+    },
+    {
+      "id": "count",
+      "name": "Count",
+      "version": "1.0.0",
+      "status": "active",
+      "category": "visualization",
+      "subcategory": "image-analysis",
+      "path": "skills/visualization/image-analysis/count/SKILL.md",
+      "description": "Count clearly identifiable target objects in an uploaded image, render high-contrast numbered overlays directly onto the original image via programmatic drawing, and return a concise tabulated breakdown.",
+      "triggers": [
+        "@count",
+        "/count",
+        "count objects in image",
+        "count items in photo",
+        "how many are in this image",
+        "annotated object count",
+        "numbered markers on image"
+      ],
+      "tags": [
+        "visualization",
+        "image-analysis",
+        "object-counting",
+        "annotation",
+        "pillow",
+        "computer-vision",
+        "verification"
+      ],
+      "outputs": [
+        "image",
+        "markdown",
+        "structured-chat"
+      ],
+      "required_dependencies": [],
+      "optional_dependencies": [],
+      "capabilities": {
+        "preferred": [
+          "image-inspection",
+          "python-execution",
+          "file-creation",
+          "artifact-verification"
+        ],
+        "fallback": "Visual-only count with spatial grid descriptions and explicit disclosure that programmatic numbered image overlay could not be rendered."
+      },
+      "platforms": [
+        "gemini-chat",
+        "gemini-task",
+        "chatgpt-chat",
+        "chatgpt-work"
+      ],
+      "references": [],
+      "adapters": {
+        "gemini-task": "skills/visualization/image-analysis/count/adapters/gemini-task.md"
+      }
+    },
+    {
+      "id": "live-browser-qa",
+      "name": "Live Browser QA",
+      "version": "1.0.0",
+      "status": "active",
+      "category": "quality-assurance",
+      "subcategory": "technical-audit",
+      "path": "skills/quality-assurance/technical-audit/live-browser-qa/SKILL.md",
+      "description": "Execute evidence-based live browser QA audits against deployed URLs or local web servers, verifying DOM rendering, console/network health, responsive viewports, and interactive user flows without destructive mutations.",
+      "triggers": [
+        "@live-browser-qa",
+        "/live-browser-qa",
+        "@browser-qa",
+        "/browser-qa",
+        "live browser qa",
+        "qa audit website",
+        "test live web app",
+        "responsive viewport audit",
+        "console and network check",
+        "end-to-end browser verification"
+      ],
+      "tags": [
+        "quality-assurance",
+        "technical-audit",
+        "browser-qa",
+        "playwright",
+        "responsive",
+        "console-errors",
+        "network-errors",
+        "accessibility",
+        "e2e",
+        "verification"
+      ],
+      "outputs": [
+        "markdown",
+        "html",
+        "structured-chat"
+      ],
+      "required_dependencies": [],
+      "optional_dependencies": [
+        "delegate",
+        "review"
+      ],
+      "capabilities": {
+        "preferred": [
+          "browser-rendering",
+          "javascript-execution",
+          "file-creation",
+          "artifact-verification"
+        ],
+        "fallback": "Static HTTP/HTML inspection explicitly labeled STATIC-ONLY (RUNTIME UNVERIFIED); never report PASS for unexecuted browser checks."
+      },
+      "platforms": [
+        "gemini-chat",
+        "gemini-task",
+        "chatgpt-chat",
+        "chatgpt-work"
+      ],
+      "references": [],
+      "adapters": {
+        "gemini-task": "skills/quality-assurance/technical-audit/live-browser-qa/adapters/gemini-task.md"
       }
     }
   ]

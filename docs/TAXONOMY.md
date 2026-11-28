@@ -2,17 +2,17 @@
 
 Categories and subcategories organize the library; they are not executable instructions. Skills are independently installable leaf directories with SKILL.md. The registry is the authoritative list of implemented skills.
 
-| Category | Subcategories |
-|---|---|
-| orchestration | delegation, planning, execution |
-| civil-engineering | structural, geotechnical, hydraulics, surveying, transportation, construction-management, materials-testing, environmental |
-| education | instructional-materials, assessment, curriculum, pedagogy |
-| visualization | 2d-illustration, 3d-modeling, interactive-simulations, cad, animation |
-| research | literature-review, source-verification, methodology |
-| data-analysis | statistics, data-cleaning, data-visualization |
-| artifact-production | html, documents, spreadsheets, presentations, pdf |
-| software-engineering | implementation, debugging, architecture, performance |
-| quality-assurance | technical-audit, code-audit, artifact-audit, remediation |
+| Category | Active Subcategories (Implemented Skills) | Planned / Reserved Subcategories (Not Implemented) |
+|---|---|---|
+| `orchestration` | `delegation` (`delegate`), `planning` (`ask`), `execution` (`max`) | — |
+| `civil-engineering` | `construction-management` (`estimate`) | `structural`, `geotechnical`, `hydraulics`, `surveying`, `transportation`, `materials-testing`, `environmental` |
+| `visualization` | `3d-modeling` (`3d`), `animation` (`animate`), `image-analysis` (`count`) | `2d-illustration`, `interactive-simulations`, `cad` |
+| `artifact-production` | `presentations` (`msdeck`) | `html`, `documents`, `spreadsheets`, `pdf` |
+| `quality-assurance` | `artifact-audit` (`review`), `technical-audit` (`live-browser-qa`) | `code-audit`, `remediation` |
+| `education` | — | `instructional-materials`, `assessment`, `curriculum`, `pedagogy` |
+| `research` | — | `literature-review`, `source-verification`, `methodology` |
+| `data-analysis` | — | `statistics`, `data-cleaning`, `data-visualization` |
+| `software-engineering` | — | `implementation`, `debugging`, `architecture`, `performance` |
 
 ## Storage and composition
 
@@ -23,3 +23,6 @@ Example: a future interactive RC beam teaching simulation could combine reinforc
 ## Expansion
 
 Add new subcategories to registry.json as needed. Prefer separate skills when the execution contract, prerequisites or deliverable materially differs; use references for variants that share the same workflow. Avoid category-level catch-all skills containing unrelated procedures.
+
+
+9 categories, 40 subcategories: 10 active and 30 planned/reserved.

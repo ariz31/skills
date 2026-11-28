@@ -6,7 +6,7 @@ Optimize for direct reasoning, concise responses, and real code/file execution w
 
 | Skill | Execution mode on Gemini Chat | Verification & delivery fallback |
 |---|---|---|
-| `ask` | Single numbered Markdown turn (3–8 lettered options) + Assumptions + Intent Check | Never claim a native question widget was used |
+| `ask` | Single numbered Markdown turn (0–8 crucial questions with lettered options) + Assumptions + Intent Check | Never claim a native question widget was used |
 | `delegate` | Bounded sequential role passes (parallel sub-agents only if actually exposed) | Label audit `SELF-REVIEW`; disclose non-independence |
 | `max` | Two sequential Delegate cycles + separate holistic self-audit (shared 3-round cap) | Label `SELF-REVIEW`; return Gap Report if blocked |
 | `3d` | Generate complete single-file HTML (save/Canvas if supported, else full source) | Static geometry/math inspection; disclose unverified WebGL rendering |
@@ -14,3 +14,5 @@ Optimize for direct reasoning, concise responses, and real code/file execution w
 | `msdeck` | Single-file 16:9 HTML shell with inline SVG when media fetch is unavailable | Static HTML/CSS/JS review; disclose unverified 6-viewport checks |
 | `review` | Sequential read-only adversarial lenses; HTML dashboard or Markdown report | Label `SELF-REVIEW`; never modify audited source |
 | `estimate` | Four sequential role passes; live search if exposed, else `[Benchmark]`/`[Assumed]` | Recompute totals deterministically; deliver Markdown or supported export |
+| `count` | Inspect image; use programmatic numbered overlays where available | Visual grid count; disclose unavailable overlays |
+| `live-browser-qa` | Actual browser and authorized URL checks when exposed | Static review only when browser unavailable; never fabricate live evidence |
