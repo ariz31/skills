@@ -1,0 +1,300 @@
+{
+  "schema_version": 1,
+  "library": "ariz31/skills",
+  "cases": [
+    {
+      "id": "TRG-001",
+      "category": "explicit_command",
+      "prompt": "@ask Help me plan a civil engineering capstone project",
+      "expected_mode": "clarify_first",
+      "expected_skills": [
+        "ask"
+      ],
+      "forbidden_skills": [
+        "delegate",
+        "estimate"
+      ]
+    },
+    {
+      "id": "TRG-002",
+      "category": "explicit_command",
+      "prompt": "/3d Build an interactive retaining wall model with weep holes",
+      "expected_mode": "execute",
+      "expected_skills": [
+        "3d"
+      ],
+      "forbidden_skills": [
+        "animate"
+      ]
+    },
+    {
+      "id": "TRG-003",
+      "category": "alias",
+      "prompt": "Use @threejs-modeling to render a truss bridge",
+      "expected_mode": "execute",
+      "expected_skills": [
+        "3d"
+      ],
+      "forbidden_skills": [
+        "animate"
+      ],
+      "notes": "Resolve legacy alias threejs-modeling to canonical skill ID 3d; never emit non-canonical alias IDs."
+    },
+    {
+      "id": "TRG-004",
+      "category": "alias",
+      "prompt": "/reviewer Audit this FastAPI repo for security issues",
+      "expected_mode": "execute",
+      "expected_skills": [
+        "review",
+        "delegate"
+      ],
+      "forbidden_skills": [
+        "max"
+      ]
+    },
+    {
+      "id": "TRG-005",
+      "category": "semantic_positive",
+      "prompt": "Split the task and run parallel sub-agents to compare 4 concrete mix standards",
+      "expected_mode": "execute",
+      "expected_skills": [
+        "delegate"
+      ],
+      "forbidden_skills": [
+        "max",
+        "estimate"
+      ]
+    },
+    {
+      "id": "TRG-006",
+      "category": "semantic_positive",
+      "prompt": "Create a minimalist swipeable 16:9 HTML slide deck teaching Mohr's circle",
+      "expected_mode": "execute",
+      "expected_skills": [
+        "msdeck"
+      ],
+      "forbidden_skills": [
+        "3d",
+        "animate"
+      ]
+    },
+    {
+      "id": "TRG-007",
+      "category": "semantic_positive",
+      "prompt": "Prepare a full BOQ, BOM, unit price list, and PH permit schedule for this 2-storey house plan",
+      "expected_mode": "execute",
+      "expected_skills": [
+        "estimate",
+        "delegate"
+      ],
+      "forbidden_skills": [
+        "review"
+      ]
+    },
+    {
+      "id": "TRG-008",
+      "category": "composition",
+      "prompt": "@ask @estimate Price this attached commercial renovation plan",
+      "expected_mode": "clarify_first",
+      "expected_skills": [
+        "ask",
+        "estimate",
+        "delegate"
+      ],
+      "forbidden_skills": [
+        "review"
+      ]
+    },
+    {
+      "id": "TRG-009",
+      "category": "composition",
+      "prompt": "@max Build an interactive Three.js reinforced concrete beam cutaway",
+      "expected_mode": "execute",
+      "expected_skills": [
+        "max",
+        "delegate",
+        "3d"
+      ],
+      "forbidden_skills": [
+        "animate"
+      ]
+    },
+    {
+      "id": "TRG-010",
+      "category": "composition",
+      "prompt": "@review Audit the attached contractor BOQ spreadsheet without modifying it",
+      "expected_mode": "execute",
+      "expected_skills": [
+        "review",
+        "delegate"
+      ],
+      "forbidden_skills": [
+        "estimate"
+      ]
+    },
+    {
+      "id": "TRG-011",
+      "category": "conditional_dependency",
+      "prompt": "Animate a simple 2-state CSS loading spinner for my button",
+      "expected_mode": "execute",
+      "expected_skills": [
+        "animate"
+      ],
+      "forbidden_skills": [
+        "delegate",
+        "3d"
+      ]
+    },
+    {
+      "id": "TRG-012",
+      "category": "conditional_dependency",
+      "prompt": "Animate a 5-phase post-tensioned bridge erection sequence in 3D",
+      "expected_mode": "execute",
+      "expected_skills": [
+        "animate",
+        "delegate",
+        "3d"
+      ],
+      "forbidden_skills": [
+        "msdeck"
+      ]
+    },
+    {
+      "id": "TRG-013",
+      "category": "negative_non_trigger",
+      "prompt": "What is Three.js and how does WebGL differ from Canvas?",
+      "expected_mode": "ordinary_assistance",
+      "expected_skills": [],
+      "forbidden_skills": [
+        "3d",
+        "animate"
+      ]
+    },
+    {
+      "id": "TRG-014",
+      "category": "negative_non_trigger",
+      "prompt": "Give me a rough ballpark budget for a weekend team retreat",
+      "expected_mode": "ordinary_assistance",
+      "expected_skills": [],
+      "forbidden_skills": [
+        "estimate",
+        "delegate"
+      ]
+    },
+    {
+      "id": "TRG-015",
+      "category": "read_only_guard",
+      "prompt": "Use ariz31/skills to complete my request: audit this Python script",
+      "expected_mode": "execute",
+      "expected_skills": [
+        "review",
+        "delegate"
+      ],
+      "forbidden_skills": []
+    },
+    {
+      "id": "TRG-016",
+      "category": "install_protocol",
+      "prompt": "install ariz31/skills estimate",
+      "expected_mode": "install",
+      "expected_skills": [
+        "delegate",
+        "estimate"
+      ],
+      "forbidden_skills": [
+        "review"
+      ]
+    },
+    {
+      "id": "TRG-017",
+      "category": "install_protocol",
+      "prompt": "sync ariz31/skills",
+      "expected_mode": "sync",
+      "expected_skills": [],
+      "forbidden_skills": []
+    },
+    {
+      "id": "TRG-018",
+      "category": "install_protocol",
+      "prompt": "update ariz31/skills 3d",
+      "expected_mode": "update",
+      "expected_skills": [
+        "3d"
+      ],
+      "forbidden_skills": [
+        "animate"
+      ]
+    },
+    {
+      "id": "TRG-019",
+      "category": "explicit_command",
+      "prompt": "@count Count the parked delivery trucks in this site photo",
+      "expected_mode": "execute",
+      "expected_skills": [
+        "count"
+      ],
+      "forbidden_skills": [
+        "3d",
+        "estimate"
+      ]
+    },
+    {
+      "id": "TRG-020",
+      "category": "semantic_positive",
+      "prompt": "How many rebar stirrups are visible in this uploaded beam photo?",
+      "expected_mode": "execute",
+      "expected_skills": [
+        "count"
+      ],
+      "forbidden_skills": [
+        "estimate",
+        "3d"
+      ]
+    },
+    {
+      "id": "TRG-021",
+      "category": "negative_non_trigger",
+      "prompt": "Count how many rows have status=active in this CSV file",
+      "expected_mode": "ordinary_assistance",
+      "expected_skills": [],
+      "forbidden_skills": [
+        "count"
+      ]
+    },
+    {
+      "id": "TRG-022",
+      "category": "explicit_command",
+      "prompt": "@live-browser-qa Audit https://example.app for mobile overflow and console errors",
+      "expected_mode": "execute",
+      "expected_skills": [
+        "live-browser-qa"
+      ],
+      "forbidden_skills": [
+        "review"
+      ]
+    },
+    {
+      "id": "TRG-023",
+      "category": "alias",
+      "prompt": "/browser-qa Check http://localhost:5173 for broken images and 404s",
+      "expected_mode": "execute",
+      "expected_skills": [
+        "live-browser-qa"
+      ],
+      "forbidden_skills": [
+        "review"
+      ]
+    },
+    {
+      "id": "TRG-024",
+      "category": "negative_non_trigger",
+      "prompt": "Review my Python sorting function for Big-O performance bugs",
+      "expected_mode": "ordinary_assistance",
+      "expected_skills": [],
+      "forbidden_skills": [
+        "live-browser-qa"
+      ]
+    }
+  ]
+}

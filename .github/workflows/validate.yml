@@ -1,0 +1,52 @@
+name: Validate ariz31/skills Registry & Packages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate registry, word budgets, links, and trigger suite
+        run: |
+          # --max-skill-words 800 is the hard CI error; --warn-skill-words 750 emits visible non-fatal warnings.
+          python3 scripts/validate_registry.py \
+            --max-skill-words 800 \
+            --warn-skill-words 750 \
+            --check-triggers \
+            --triggers-file evaluations/triggers.json \
+            --format text
+
+      - name: Smoke-test deterministic skill packaging (dir & zip)
+        run: |
+          python3 scripts/package_skill.py --all --platform gemini-task --format dir --output-dir /tmp/dist-dir
+          python3 scripts/package_skill.py --all --platform gemini-task --format zip --output-dir /tmp/dist-zip
+          ls -la /tmp/dist-zip
+
+      - name: Verify deterministic ZIP reproducibility
+        run: |
+          python3 scripts/package_skill.py --skill delegate --platform gemini-task --format zip --output-dir /tmp/dist-zip-2
+          cmp /tmp/dist-zip/delegate-v*.zip /tmp/dist-zip-2/delegate-v*.zip
+
+      - name: Upload packaged ZIPs on manual dispatch
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ariz31-skills-packages
+          path: /tmp/dist-zip/*.zip
+          retention-days: 14
