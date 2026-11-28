@@ -129,8 +129,10 @@ def main():
             stage=out/target
             archive=out/f"{target}-v{s['version']}.zip"
             # Never overwrite source paths or an ancestor of the repository.
+            protected = tuple(root / name for name in ("skills", "docs", "scripts", "platforms", ".github", "evaluations", "tests", ".git"))
             for dest in (stage,archive):
-                if dest.resolve().is_relative_to(root/"skills") or root.is_relative_to(dest.resolve()) or dest.resolve() in {root/"docs",root/"scripts",root/"platforms",root/".github",root/"evaluations"}:
+                resolved = dest.resolve()
+                if root.is_relative_to(resolved) or any(resolved.is_relative_to(p) or p.is_relative_to(resolved) for p in protected):
                     raise ValueError("unsafe output path: "+str(dest))
                 if dest.is_symlink(): raise ValueError("refuse symlink output: "+str(dest))
             files=package_files(root,s,target,a.platform,bundle,a.include_evals)

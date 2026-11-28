@@ -246,9 +246,15 @@ def validate(root, registry, maximum=800, warning=750, trigger_file=None):
                 issue("V10","required dependency not active: "+dep,k)
     try:
         dependency_order(skills,skills)
-        dependency_order(skills,skills,optional=True)
     except ValueError as exc:
         issue("V11",str(exc))
+    else:
+        # Optional composition is context-dependent. A combined graph cycle
+        # is advisory; only required dependency cycles are a hard V11 error.
+        try:
+            dependency_order(skills,skills,optional=True)
+        except ValueError as exc:
+            issue("V11","combined required/optional graph: "+str(exc),warn=True)
     for k,d in valid_dirs.items():
         for md in d.rglob("*.md"):
             if not md.resolve().is_relative_to(d):

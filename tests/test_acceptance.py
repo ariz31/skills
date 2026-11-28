@@ -69,6 +69,23 @@ class AcceptanceTests(unittest.TestCase):
         result = self.validate_copy(registry_mutation=mutate)
         self.assertTrue(any(x["rule"] == "V11" and "cycle" in x["message"] for x in result["errors"]), result)
 
+    def test_optional_cycle_is_advisory(self):
+        def mutate(data):
+            next(s for s in data["skills"] if s["id"] == "delegate")["optional_dependencies"] = ["ask"]
+        result = self.validate_copy(registry_mutation=mutate)
+        self.assertEqual(result["status"], "pass", result)
+        self.assertTrue(any(x["rule"] == "V11" and "cycle" in x["message"] for x in result["warnings"]), result)
+
+    def test_protected_package_output(self):
+        for folder in ("docs", "scripts", "tests", ".git"):
+            result = subprocess.run(
+                [sys.executable, str(ROOT / "scripts/package_skill.py"), "--skill", "estimate",
+                 "--format", "zip", "--output-dir", str(ROOT / folder / "nested"), "--dry-run"],
+                cwd=ROOT, capture_output=True, text=True,
+            )
+            self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+            self.assertIn("unsafe output path", result.stderr)
+
     def test_read_only_and_install_routing(self):
         self.assertEqual(deterministic_route("Use ariz31/skills @review audit code", self.skills),
                          ("execute", ["delegate", "review"]))

@@ -37,10 +37,10 @@ The invocation above is read-only. Explicit native commands:
 
 | Command | Intent |
 |---|---|
-| install ariz31/skills | Install all active skills |
-| install ariz31/skills ID | Install selected skills and required dependencies |
-| sync ariz31/skills | Reconcile missing/drifted skills |
-| update ariz31/skills [ID] | Refresh existing skills only |
+| `install ariz31/skills` | Install all active skills |
+| `install ariz31/skills <id>` | Install selected skills and required dependencies |
+| `sync ariz31/skills` | Reconcile missing/drifted skills |
+| `update ariz31/skills [id]` | Refresh existing skills only |
 
 See [installation guidance](docs/INSTALLATION.md). Overwrites require explicit confirmation.
 

@@ -24,4 +24,4 @@ Technical, engineering, financial and audit outputs are planning or educational 
 Honor explicit output formats. Verify the exact saved file or delivered source before presenting it; never claim creation or rendering without checking. Disclose material assumptions, actual verification scope and unavailable checks.
 
 ## 8. Portability and Optional Installation
-Canonical repository Markdown is the source of truth. Dynamic runtime invocation requires no native installation; installation is optional and explicitly user-triggered (see [installation guidance](INSTALLATION.md)). Resolve dependencies at the pinned revision or obtain their content; disclose unavailable essential instructions.
+Canonical repository Markdown is the source of truth. Dynamic runtime invocation requires no native installation; installation is optional and explicitly user-triggered (see canonical `docs/INSTALLATION.md`). Resolve dependencies at the pinned revision or obtain their content; disclose unavailable essential instructions.
