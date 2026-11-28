@@ -1,77 +1,33 @@
 ---
 name: animate
-description: Create technically accurate, visually refined, phase-based animations and interactive simulations with adaptive Three.js, SVG, Canvas or CSS, a deterministic timeline, and minimal auto-hiding fullscreen controls. Invoke with @animate, /animate, or contextual requests to animate a process, model, mechanism or simulation. Always compose with delegate; use 3d for three-dimensional artifacts.
+description: Create technically accurate, visually refined, phase-based animations and interactive simulations with adaptive Three.js, SVG, Canvas or CSS, a deterministic timeline, and minimal auto-hiding fullscreen controls. Invoke with @animate, /animate, or contextual requests to animate a process, model, mechanism or simulation. Compose with delegate for complex animations (optional for simple 2D); use 3d for three-dimensional artifacts.
 ---
 
 # Animate
 
-Create a working animation, not a description of one. Default deliverable: one interactive HTML file, paused on the first meaningful frame. Honor explicit output and scope requirements. Provide video or GIF export only when requested and actually supported.
+Create working phase-based animation, default one interactive HTML file paused on the first meaningful frame. Honor explicit formats. Activate for @animate, /animate or contextual creation/refinement of motion, mechanism, process, time-lapse and simulations, not informational or incidental mentions.
 
-## 1. Activation and capability preflight
+## 1. Preflight and composition
+Delegate is required for ≥3 phases, any 3D/Three.js animation, physics/data-driven simulation or parameter recomputation, custom multi-panel UI, audio synchronization, video/GIF export, or explicit `@delegate`/`@max` composition. For simple single-component illustrative 2D CSS/SVG/Canvas with ≤2 phases and no solver, Delegate is optional; a single-agent fast path is allowed. Select `3d` whenever 3D modeling/rendering is required.
+Finish Ask's Intent Check first if selected. Detect actual workspace, worker, browser, file and export tools. Use [Gemini Task adapter](adapters/gemini-task.md) when applicable; unavailable required dependencies block certification.
 
-- Recognize @animate and /animate as case-insensitive explicit commands. Also match animate, animation, animated simulation, process animation, time-lapse, construction sequence, animated mechanism, motion visualization and equivalent creation/refinement requests semantically. Do not create unsolicited artifacts for informational questions or incidental animation mentions.
-- Always activate the canonical delegate skill for production and audit, even for small animations; scale the workstreams to the task. Automatically activate 3d whenever the deliverable requires three-dimensional modeling or rendering, including existing Three.js model animation. Load other applicable domain skills without duplication.
-- When ask is selected, finish its intent confirmation before dispatching implementation workers or editing artifacts. For ordinary clear animation requests, proceed directly with sensible disclosed defaults.
-- Detect actual worker, workspace, browser, execution, file and export capabilities. Use Delegate's native orchestration when available; otherwise use its sequential role-based fallback, clearly identifying self-review. Do not invent agents, screenshots, export capabilities or verification.
-- For native installations lacking dependency access, retrieve Delegate and 3D if applicable or request their contents; do not claim they ran. If a required dependency cannot be obtained, disclose the limitation and mark the result provisional.
+## 2. Technical contract
+Identify subject, audience, source evidence, units, dimensions, equations, scope, interactions, duration and phases. Distinguish physics-based, data-driven and illustrative motion; label assumptions, schematic/exaggerated behavior. Choose Three.js for 3D, SVG for crisp vectors, Canvas for dense 2D and CSS for simple motion. Define storyboard with stable IDs, phase boundaries, initial/final states, rationale, events, camera, annotations, transitions, duration and criteria. Separate physical and presentation time; adapt durations without filler. Load [motion physics](references/motion-physics.md).
 
-## 2. Establish technical and presentation contracts
+## 3. Execution mode and delegation
+Apply the conditional criteria in §1. When Delegate is active, use its worker contracts and shared board; freeze units, geometry IDs, interfaces, phase boundaries, state model, sources, output and gates. Partition 2–6 roles as appropriate: physics, timeline/state, geometry/rendering, presentation, controls, integration/verification. Use Builder → Challenger → Fixer for tightly coupled work; preserve verified slices.
 
-- Identify subject, intended audience, learning or presentation goal, scope, source evidence, dimensions, units, governing equations, constraints, intended duration, phases, deliverable format and interactions.
-- Distinguish physics-based, data-driven and illustrative motion. Use authoritative evidence and verified equations where appropriate. Label assumed, estimated, schematic and exaggerated behavior; never imply illustrative animation is a validated engineering analysis.
-- Select Three.js for genuine 3D or spatial interaction, SVG for crisp vector diagrams and moderate scene complexity, Canvas for dense or rapidly updated 2D visuals, and CSS for simple presentational motion. Choose based on accuracy, portability, detail and performance, not a fixed technology preference.
-- Define the phase storyboard: stable ID, goal, start/end time, required initial/final state, source/equation or illustrative rationale, key events, camera, synchronized annotation, transition, duration and verification criteria. Include all technically meaningful stages without filler.
-- Use adaptive phase durations that make important events understandable. Optional holds may pause at key events. Separate physical simulation time and presentation time, including any time compression or slow motion. See [motion physics](references/motion-physics.md).
-
-## 3. Delegate the work
-
-Use Delegate's worker contracts, lifecycle, isolation and final auditor. Establish a shared board (file if supported, otherwise structured context) before splitting work. Freeze common units, geometry IDs, interfaces, phase boundaries, state model, source register, visual conventions, output format and acceptance criteria. The coordinator owns integration; workers must not redefine shared contracts independently.
-
-For parallelizable work, select 2 to 6 non-overlapping roles as appropriate: technical modeling/physics; timeline and state; geometry/rendering; presentation and annotations; controls and responsive UI; integration or verification. Assign individual phases only when dependencies and shared state permit. For tightly coupled simulations use Builder, Adversarial Challenger and Fixer rather than artificial partitioning. Preserve successful work and repair only failing slices. One coordinator controls dispatch and retries, with no nested agents.
-
-## 4. Build deterministic animation architecture
-
-Separate seven logical systems even in a single HTML file: simulation (physical state), timeline (phase/time mapping), geometry (semantic components), rendering (visual representation), presentation (camera and annotations), playback (controls and transport), configuration (validated inputs and recomputation). Establish one authoritative timeline and one canonical simulation state per parameter revision.
-
-- Derive every visible state from the current timeline position and immutable parameter revision. Use analytical sampling, keyframes or deterministic fixed-step integration with reproducible checkpoints as appropriate. Seeking forward/backward, replay, phase skipping and looping must restore the correct state without accumulating mutations.
-- Distinguish presentation clock, physical clock and render cadence. Use monotonic elapsed time; playback speed changes presentation progression only, not governing equations or numerical step size. Handle pause, inactive tabs, terminal frame, event holds and looping without drift or catch-up instability.
-- Maintain boundary continuity except for explicitly modeled physical discontinuities (impact, fracture, contact, switching, topology change). Preserve stable geometry IDs and define reversible lifecycle changes. Never use cinematic easing on physical state if it changes the governing relationship.
-- Validate parameter inputs and derived constraints. Pause or safely recompute when a change invalidates the solution; cancel stale work and atomically replace the timeline/state/geometry revision. Preserve playback position only if meaningful and valid, otherwise reset with clear feedback.
-- Follow [timeline engine](references/timeline-engine.md) and [motion physics](references/motion-physics.md).
+## 4. Deterministic architecture
+Separate simulation, timeline, geometry, rendering, presentation, playback and configuration. One canonical state and authoritative timeline per immutable parameter revision. Derive state from timeline position using analytical samples, keyframes or fixed-step integration/checkpoints; seek/replay/reverse/loop must reproduce state. Separate physical clock, presentation clock and render cadence; speed never changes equations or integration step. Preserve continuity except modeled physical discontinuities; no cinematic easing of physical equations. Validate inputs, cancel stale work and atomically replace revisions, preserving position only if valid. Load [timeline engine](references/timeline-engine.md).
 
 ## 5. Presentation and playback
+Canvas-first, compact phase indicator, collapsible information/parameters, auto-hiding controls. Play/pause, replay, scrub, phase navigation, speed, frame step, loop/autoplay/phase repeat when applicable. Start paused and silent; holds communicated and resumable. Fullscreen or labeled viewport fallback, clean mode, restore controls on pointer/touch/keyboard, visible focus and no traps. Synchronized annotations, units and hide-all; camera framing with manual override/reset. Responsive touch/keyboard/reduced-motion and contrast. Load [presentation UI](references/presentation-ui.md) and [rendering/performance](references/rendering-performance.md).
 
-Make the visualization the primary canvas, with compact contextual phase indicator, collapsible information and parameter panels, and an auto-hiding playback overlay. Support play/pause, replay, scrub, previous/next phase, adjustable playback speed, frame stepping, optional loop/autoplay and phase repetition. Start paused and silent unless requested otherwise. Event holds must be optional or clearly communicated and resumable.
+## 6. Deliver
+One verified HTML file by default; disclose pinned dependencies and offline/server needs. No dead controls or placeholders. Video/GIF only if requested and actual codecs available; verify timing/playability. Audio opt-in, synchronized. Provide opening instructions, assumptions, verdict and limitations.
 
-- Offer fullscreen presentation with all nonessential UI hidden during playback, and a dedicated clean mode. Restore controls on pointer, touch or keyboard interaction; keep keyboard focus visible and controls accessible when paused, focused or being used. Never trap the user in hidden controls or fullscreen. Use a viewport-maximized fallback if native fullscreen is unsupported, clearly labeled as such.
-- Keep annotations synchronized to timeline and physical state. Include units, meaningful labels and short explanations when educational or technical; allow hide-all. Avoid permanently obstructing the subject. Provide phase-specific camera framing/transitions with manual override for applicable views; user camera manipulation must not fight automatic camera updates. Offer resume-auto-camera or reset.
-- Use context-dependent transitions, adaptive technical/realistic/educational visual language, accurate geometry/materials and purposeful visual hierarchy. Do not add decorative motion that reduces comprehension. Support responsive desktop/mobile, touch, keyboard, reduced-motion preferences and sufficient contrast.
-- Follow [presentation UI](references/presentation-ui.md) and [rendering and performance](references/rendering-performance.md).
+## 7. Audit
+Mandatory [audit protocol](references/audit-protocol.md): Animate ≥95/100; Delegate ≥9/10 only when active; 3D ≥95/100 when active. No averaging. Verify equations, phase coverage/continuity, reproducible state, rendered playback, parameter revisions, speed independence, controls, fullscreen, mobile and performance. Incorrect physics, missing phases, broken seek/restoration, unintended discontinuities, unusable rendering, inaccessible controls or fabricated proof veto acceptance. When composed under `max`, share its unified 3-round outer remediation cap (no separate nested retry budget); at exhaustion or a hard blocker, deliver verified partial results with a Gap Report.
 
-## 6. Integrate and deliver
-
-Default to one HTML file containing the authored model, animation, controls and data. Prefer offline self-containment when practical; disclose pinned external dependencies, internet/local-server requirements and launch instructions when necessary. No placeholders, dead controls, broken assets or simulated export buttons. If requested, produce real video/GIF export using available tools and codecs; verify the exported file and its timing. Audio is opt-in and must synchronize with the same timeline; do not assume recording support.
-
-Save the actual artifact and verify the exact final version, not merely a summary. If file creation is unavailable, provide complete source if practical and explicitly disclose the limitation. Never invent a file path or download. Follow Delegate's targeted remediation loop.
-
-## 7. Strict audit and acceptance
-
-Require both Delegate's 9/10 gate and the Animate 95/100 gate; apply 3D's own 95/100 gate when selected. A single real audit may report each rubric separately with shared evidence. No averaging away defects. Use independent review when available, otherwise clearly labeled self-review.
-
-| Criterion | Points |
-|---|---:|
-| Scientific and technical accuracy | 30 |
-| Phase sequencing and continuity | 20 |
-| Visual fidelity and clarity | 20 |
-| Motion smoothness and rendering performance | 15 |
-| UI and playback usability | 10 |
-| Code correctness | 5 |
-| Total | 100 |
-
-PASS requires at least 95/100 with no critical defects or unverified essential requirements. Incorrect equations or physical behavior, missing phases, broken seeking/playback/state restoration, unintended geometry discontinuities, unusable rendering, inaccessible essential controls/fullscreen (or promised fallback), or fabricated evidence automatically fail. Verify the source, rendered playback, all phase boundaries, state reproducibility, parameters, speed independence, controls, fullscreen, mobile and performance using available tools. See [audit protocol](references/audit-protocol.md).
-
-Fix and re-audit actual revised artifacts until accepted or a genuine blocker prevents further verification. Report unexecuted checks and missing tools honestly; a provisional artifact must not be called certified. Deliver the file, brief opening instructions, material assumptions, actual audit verdict/score and limitations. Do not claim professional engineering certification.
-
-## Embedded and audit-only composition
-
-When a presentation skill owns the requested single-file artifact, supply a scoped animation component rather than a second document: the shell owns slide/step navigation, stage, global fullscreen and focus; Animate owns deterministic simulation/timeline and local playback. Define mount/resize/activate/deactivate/reset/dispose behavior, pause inactive rendering, synchronize shell steps to timeline positions and avoid competing global handlers. Verify the integrated final candidate. For an audit-only request, apply Animate's rubric and inspect existing behavior without rebuilding or modifying the source unless separately authorized.
+## Embedded/audit-only
+Shell owns stage/navigation/global fullscreen/focus; Animate owns local timeline/playback. Implement mount/resize/activate/deactivate/reset/dispose, pause inactive rendering, synchronize shell steps and avoid competing handlers. Verify integrated candidate. Audit-only is read-only.

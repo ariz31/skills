@@ -9,3 +9,10 @@ Measure rather than promise universal FPS. Record device/browser, viewport/DPR, 
 Single HTML is the default. Embed authored state, timeline, scene and controls; use pinned compatible library imports and disclose all external dependencies and launch requirements. Do not describe a CDN-dependent file as offline. Verify the actual launch method and offline behavior if promised. Protect accessibility and ensure essential controls work even when optional features fail.
 
 If export is requested and supported, select real available format/codec, dimensions, frame rate and duration. For deterministic export sample frames at explicit timestamps instead of recording unreliable wall-clock frames when feasible. Synchronize opt-in audio, captions and camera; exclude controls by default unless requested. Validate file existence, decodability, first/last frames, duration and timing. If video/GIF generation is unavailable, disclose and still provide working HTML when appropriate; do not create fake export actions or mislabel formats.
+
+
+## 6. Integrate and deliver
+
+Default to one HTML file containing the authored model, animation, controls and data. Prefer offline self-containment when practical; disclose pinned external dependencies, internet/local-server requirements and launch instructions when necessary. No placeholders, dead controls, broken assets or simulated export buttons. If requested, produce real video/GIF export using available tools and codecs; verify the exported file and its timing. Audio is opt-in and must synchronize with the same timeline; do not assume recording support.
+
+Save the actual artifact and verify the exact final version, not merely a summary. If file creation is unavailable, provide complete source if practical and explicitly disclose the limitation. Never invent a file path or download. Follow Delegate's targeted remediation loop when Delegate is active.

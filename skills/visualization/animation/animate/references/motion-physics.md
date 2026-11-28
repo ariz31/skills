@@ -15,3 +15,12 @@ Domain examples (not mandatory phases for every task):
 - Mechanical assembly: component IDs, constraints, joint axes, clearances and sequence; distinguish exploded presentation from physical positions.
 
 At intentional events such as fracture, impact or topology change, use physically meaningful pre/post states and explain the discontinuity. Verify both sides. Reject material scientific errors even if the animation looks smooth.
+
+
+## 2. Establish technical and presentation contracts
+
+- Identify subject, intended audience, learning or presentation goal, scope, source evidence, dimensions, units, governing equations, constraints, intended duration, phases, deliverable format and interactions.
+- Distinguish physics-based, data-driven and illustrative motion. Use authoritative evidence and verified equations where appropriate. Label assumed, estimated, schematic and exaggerated behavior; never imply illustrative animation is a validated engineering analysis.
+- Select Three.js for genuine 3D or spatial interaction, SVG for crisp vector diagrams and moderate scene complexity, Canvas for dense or rapidly updated 2D visuals, and CSS for simple presentational motion. Choose based on accuracy, portability, detail and performance, not a fixed technology preference.
+- Define the phase storyboard: stable ID, goal, start/end time, required initial/final state, source/equation or illustrative rationale, key events, camera, synchronized annotation, transition, duration and verification criteria. Include all technically meaningful stages without filler.
+- Use adaptive phase durations that make important events understandable. Optional holds may pause at key events. Separate physical simulation time and presentation time, including any time compression or slow motion. See this reference.

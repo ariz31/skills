@@ -25,3 +25,24 @@ Report:
 - LIMITATIONS: unavailable checks, assumptions, unresolved issues
 
 Re-audit revised artifact after corrections. Stop blind retries when blocked by missing evidence or tools; do not label provisional output as certified. If composing with Delegate, both applicable gates must pass; map its audit requirements to this stricter rubric without averaging away defects.
+
+
+## 5. Verify the exact final artifact
+
+- Verify inventory, units, finite dimensions, geometry validity, coordinate transforms, openings, connections, clearances, intentional/unintentional intersections and datum alignment. Check actual assembled geometry against independent source values or calculations rather than merely echoing generator inputs.
+- Use local-axis measurements, reference points, analytical comparisons, section sampling and bounding boxes as appropriate; a world-axis bounding box alone cannot verify a rotated member's length or actual shape.
+- If browser execution is available, render the exact HTML, inspect multiple meaningful viewpoints and close-ups, check the console, exercise every supplied control, resize/mobile behavior, parameter updates and any promised offline mode. Inspect visual defects such as floating elements, clipping, bad normals, z-fighting or overlapping UI.
+- Record actual checks, expected/observed values, tolerances, errors, assumptions and unverified items. Distinguish static inspection, visual inspection and runtime execution. Never fabricate browser results, screenshots, independent auditors or numerical proof.
+- Apply the following 100-point rubric, scoring only evidence-supported performance:
+
+| Criterion | Points |
+|---|---:|
+| Geometric and dimensional accuracy | 30 |
+| Component completeness | 20 |
+| Spatial and technical correctness | 15 |
+| Visual fidelity | 15 |
+| Interactivity and usability | 10 |
+| Rendering performance | 5 |
+| Code quality | 5 |
+
+PASS requires at least 95/100 AND no critical defects or unverified essential requirements. Incorrect critical dimensions, material engineering errors, fabricated source data, incomplete essential components, unusable rendering, or nonfunctional essential controls automatically fail. See this protocol for evidence and reporting.

@@ -2,7 +2,7 @@
 
 ## Package
 
-Every active skill has a globally unique lowercase kebab-case ID and a SKILL.md with YAML frontmatter containing name (matching its ID) and a useful description stating what it does and when to use it. Keep the main instructions concise. Use references/ for optional details, adapters/ for platform-specific instructions, and evaluations/ for test scenarios. Do not require network calls, scripts or special tools without a documented fallback or explicit capability requirement.
+Every active skill has a globally unique lowercase kebab-case ID and a SKILL.md with YAML frontmatter containing name (matching its ID) and a useful description stating what it does and when to use it. Keep SKILL.md at most 800 words (authoring warning above 750). Inherit docs/INVARIANTS.md; state domain-specific deltas and keep intra-package links valid. Use references/ for optional details, adapters/ for platform-specific instructions, and evaluations/ for test scenarios. Do not require network calls, scripts or special tools without a documented fallback or explicit capability requirement.
 
 ## Required content
 
@@ -11,7 +11,7 @@ Every active skill has a globally unique lowercase kebab-case ID and a SKILL.md 
 - Ordered execution procedure with evidence requirements.
 - Quality gates, critical defects, fallback and failure recovery.
 - Platform differences only where material.
-- References and dependencies using stable identifiers or explicit relative paths.
+- References and dependencies using canonical skill IDs for cross-skill dependencies and package-local relative paths.
 
 For engineering skills, require units, governing equations, applicability, assumptions, independent numerical checks where feasible, and authoritative standards/edition when relevant. Never fabricate clauses or claim professional certification. Educational skills must specify learner level, objectives, accuracy and alignment of assessments. Artifact skills must validate the actual output, not merely its description.
 

@@ -5,95 +5,31 @@ description: Clarify intent and resolve ambiguity before implementing anything. 
 
 # Ask
 
-Clarify intent, eliminate ambiguity, and align on scope before doing any implementation.
+## Activation and preflight
+Use for explicit @ask or /ask, brainstorming/ideation, or high-impact ambiguity in goals, scope, architecture, audience, constraints or format. Do not activate for clear low-risk tasks unless explicitly invoked, or repeat an already confirmed intent. Read available context first. Use the [Gemini Task adapter](adapters/gemini-task.md) only if actual tools exist; otherwise use numbered Markdown questions with lettered options.
 
-## When to Use
+## Intake contract
+Do not write deliverables, edit files, perform mutating actions or dispatch implementation workers before intent confirmation. Identify crucial unknowns versus defaultable details. Do not ask about facts already available or trivial preferences.
 
-- The user includes `@ask` or `/ask` anywhere in the prompt.
-- The user is asking for ideas, brainstorming, or exploring directions before committing to a build.
-- The request has high ambiguity where critical decisions (goal, audience, scope, constraints, or deliverable format) would materially change the output.
-- A complex task is about to trigger heavy work (such as multi-file generation, code changes, or `delegate`) and key requirements are still unstated.
+- Ask an adaptive **3 to 8 crucial multiple-choice questions** matched to actual ambiguity: **3–4** for focused unknowns, **5–8** for multi-faceted, architectural, or high-stakes requests. If fewer than 3 genuine unknowns exist (or the prompt is already clear on explicit @ask or /ask), ask only the real blockers (0–2) or skip straight to **Assumptions** and **Intent Check**—never pad with trivial questions to hit a minimum, and never exceed 8.
+- Each question has 2–5 concise mutually exclusive options; allow custom responses without redundant Other if the UI already provides free text. For brainstorming, offer concrete strategic directions and trade-offs.
+- Gemini Task: 1–3 questions in one native call; 4–8 default to a single numbered Markdown turn, or 4–6 in at most two sequential native batches of ≤3 when preferred or dependent. 7–8 require Markdown. Zero questions skips the widget. Never claim Markdown was a native widget.
+- Immediately below questions (or directly if no blockers), list concrete, overrideable defaults under **Assumptions**: scope, format, standards/units and stack as relevant.
 
-## When Not to Use
+## Intent verification
+After answers, output a compact **Intent Check**:
+- **Goal:** one sentence describing the intended result.
+- **Key Choices:** selections and hard constraints.
+- **Assumptions:** remaining defaults.
+- **Deliverable:** exact format and scope.
 
-- The request is clear, unambiguous, and low-risk (for example, a direct factual lookup or a fully specified single-step task) and the user did not invoke `@ask` or `/ask`.
-- The user already confirmed the intent summary and told you to proceed with implementation.
+Ask for confirmation or adjustments. Begin implementation only after confirmation, or explicit permission to proceed with disclosed defaults. If explicit Ask is invoked on an already clear request, present assumptions and the Intent Check for one-turn confirmation.
 
-## Capability Preflight
+## Gates and recovery
+PASS requires zero premature implementation, genuinely crucial concise questions, explicit non-blocking assumptions and clear Intent Check. Critical defects: implementation with unresolved high-impact ambiguity, more than 8 questions, padding, essay questions when choices fit, silent assumptions, verbose preambles or repeating the request.
 
-Check whether the host provides a native structured multiple-choice questioning tool. On Gemini Task, use [its adapter](adapters/gemini-task.md) when `ask_question` is available. On any other host, present clean multiple-choice options in plain Markdown text and let the user reply with option letters, numbers, or custom text. Never claim to have used a native prompt widget if none is available.
+If the user says “just go ahead” or “you decide,” lock disclosed defaults and proceed. For partial answers default secondary choices, disclose them, and cap clarification at 1–2 rounds unless a hard blocker remains. Never loop or interrogate. Three sharp questions beat eight mediocre ones.
 
-## Inputs, Constraints, and Outputs
+When composing, run Ask first and pass verified intent into downstream skills. When standalone, ask at most two Estimate intake questions total (not two rounds). When `ask` is co-selected, Ask owns upfront clarification under its adaptive 3–8 question budget, including at most two Estimate-critical questions (e.g., VAT and permits); finish its Intent Check before implementation or worker dispatch, reuse every confirmed answer verbatim and cap remaining Estimate follow-ups at `max(0, 2 - estimate_questions_already_asked)`. Never repeat answered questions or bypass confirmation.
 
-- **Inputs:** The user's raw request plus any immediately available context (project files, prior messages, or workspace records that resolve trivial facts without bothering the user).
-- **Hard Constraint:** Do not write deliverables, modify files, run mutating actions, or spawn implementation workers until the user confirms intent.
-- **Outputs:**
-  1. One short clarification turn containing only crucial multiple-choice questions and explicit assumptions.
-  2. A concise **Intent Verification** summary listing what the user wants before starting implementation.
-
-## Workflow
-
-### 1. Triage Ambiguity Quickly
-
-- Read available context first so you never ask for facts you can already verify.
-- Separate **crucial unknowns** (decisions that change architecture, scope, audience, or format) from **defaultable details** (minor styling, naming, or secondary layout choices).
-- Assume everything that can be safely assumed. Do not ask about minor preferences.
-
-### 2. Ask Concise, Crucial Multiple-Choice Questions
-
-- Keep the entire clarification message short and scannable.
-- Ask at most **1 to 3 crucial questions** per round (4 only if genuinely unavoidable).
-- Format each question as **2 to 5 mutually exclusive multiple-choice options**, phrased concisely as direct choices.
-- Always allow the user to type a custom answer without padding the list with a redundant "Other" bullet when the UI already provides free text.
-- If the user is asking for ideas (`@ask` or brainstorming), frame the multiple-choice options around concrete strategic directions or trade-offs rather than open-ended blanks.
-
-### 3. State Explicit Assumptions Up Front
-
-- Immediately below the questions (or before executing if no blocking questions remain), list every assumption you plan to make in a short **Assumptions** block.
-- Make each assumption concrete and easy to override in one line (for example, target format, scope boundary, units/standards, or default stack).
-
-### 4. Verify User Intent Before Implementation
-
-- After the user answers (or at the end of the clarification step when only confirmation is needed), output a tight **Intent Check** block listing:
-
-  - **Goal:** One sentence stating what will be built or produced.
-  - **Key Choices:** The user's selected options and hard constraints.
-  - **Assumptions:** Any defaults that remain active.
-  - **Deliverable:** Exact output format and scope.
-
-- End with a direct confirmation prompt (for example, "Confirm to proceed, or tell me what to adjust.").
-- Begin implementation only after the user confirms (or explicitly says to go ahead with your defaults).
-- If the user's request is already completely clear except for `@ask` being invoked explicitly, skip redundant questions, state your assumptions, and present the **Intent Check** block for a fast one-turn confirmation.
-
-## Quality Gate and Critical Defects
-
-A turn passes only when all criteria hold:
-
-- Zero premature implementation, file edits, or mutating actions occurred before intent confirmation.
-- Every question is genuinely crucial and uses concise multiple-choice options.
-- All non-blocking defaults are explicitly disclosed under **Assumptions**.
-- The response ends with a clear **Intent Check** verifying what the user wants before execution.
-
-Critical defects (must fix before proceeding):
-
-- Starting implementation while high-impact ambiguity remains unresolved.
-- Asking more than 4 questions, asking open-ended essay questions when multiple-choice fits, or asking about trivial details that should be assumed.
-- Making silent assumptions without disclosing them.
-- Writing verbose preambles or repeating the user's prompt back word for word.
-
-## Fallback and Failure Recovery
-
-- **If the user replies "just go ahead" or "you decide":** Lock in your disclosed assumptions, briefly note them, and move straight to implementation without another round of questions.
-- **If the user gives a partial answer:** Assume sensible defaults for any unanswered secondary questions, disclose them in the **Intent Check**, and avoid dragging out more than 2 clarification rounds unless a hard blocker remains.
-- **When composing with other skills:** Run `ask` first to lock the specification, then hand the verified **Intent Check** into downstream skills (such as `delegate`, `3d`, or domain skills).
-
-## Gotchas
-
-- **Do not turn `@ask` into an interrogation:** 2 sharp multiple-choice questions beat 7 mediocre ones.
-- **Do not hide assumptions in prose:** Put them in a short, scannable bullet list so the user can spot and override any wrong default in seconds.
-- **Do not loop forever:** Cap clarification at 1 to 2 rounds. If uncertainty is low after round 1, lock defaults, show the **Intent Check**, and confirm.
-
-## References
-
-- [Gemini Task adapter](adapters/gemini-task.md)
-- [Evaluation scenarios](evaluations/SCENARIOS.md)
+See [evaluation scenarios](evaluations/SCENARIOS.md).

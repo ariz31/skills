@@ -1,6 +1,6 @@
 # Reconciliation and audit contract
 
-Apply with [Delegate](../../../../orchestration/delegate/SKILL.md). Freeze estimate basis, shared source register and candidate revision. Use decimal arithmetic where available, without premature quantity rounding.
+Apply with canonical skill `delegate`. Freeze estimate basis, shared source register and candidate revision. Use decimal arithmetic where available, without premature quantity rounding.
 
 ## Worker contracts and prompts
 
