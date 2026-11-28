@@ -21,3 +21,21 @@ Use perspective plus front/top/side/axonometric orthographic views where relevan
 5. Inspect resource failures and test offline launch if promised. Check repeated updates and memory/resource disposal where applicable.
 
 If a browser/runtime is unavailable, distinguish static review from runtime tests; never invent proof. If no file tool exists, provide complete code if practical, without a fictitious download.
+
+
+## 3. Visual fidelity and interaction
+
+- Use consistent PBR materials, plausible roughness/metalness, appropriate texture scale, correct normals, purposeful lights, physically credible shadows, color management and exposure. Handle glass, transparency, depth ordering and coplanar surfaces correctly.
+- Combine realistic rendering with technical legibility. Preserve small details without gratuitous polygon density; never conceal geometric deficiencies with textures or shadows.
+- Default to responsive orbit/pan/zoom, fit-to-model, perspective and orthographic presets, orientation reference, and logical component visibility. For complex assemblies, include object inspection and useful isolation controls. Add cutaways, exploded views, measurement, dimensions and layers when technically relevant.
+- Support accurate dimension annotations and units, stable selection, useful camera presets, fullscreen when supported, touch and keyboard access, and compact controls with instant feedback. Every visible control must work. Preserve camera/selection on routine updates; reset only on request.
+- For parametric models, validate inputs, regenerate dependent geometry consistently, and preserve all geometric relationships. If offering engineering calculations, derive them from verified equations, inputs and units; distinguish visualization from structural analysis.
+- See this protocol for implementation details.
+
+## 4. Build and deliver
+
+- Default to a single HTML entry point containing authored code, model and UI. Prefer an offline self-contained file when practical. If external dependencies are needed, use pinned compatible Three.js/add-on versions, consistent imports, and explicit network/server requirements. A CDN-dependent HTML file is not offline self-contained.
+- Use robust startup, resize, device-pixel-ratio management, error handling and WebGL capability feedback. Do not silently show a blank canvas. Use actual available libraries; never invent APIs.
+- Use instancing, shared geometry/materials, suitable level of detail and resource disposal as applicable. Avoid unnecessary repeated scene rebuilding and idle rendering; preserve the requested detail and responsiveness.
+- Separate model data, geometry builders, rendering, interaction and verification logically even within one HTML. No placeholders, dead controls, fake dimensions, broken assets or arbitrary source claims.
+- Save and deliver the exact file when supported. If file creation is unavailable, provide complete HTML source if practical and disclose the limitation. Never invent artifact links.

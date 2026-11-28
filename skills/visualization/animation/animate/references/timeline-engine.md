@@ -27,3 +27,14 @@ Parameter change: validate, create a new revision, cancel or ignore stale result
 ## Verification
 
 Compare identical target times reached through uninterrupted playback, forward and backward seek, phase jump, replay and different playback rates, using declared numerical tolerances. Verify each boundary just before/at/after, including first and final frame, optional holds, loops and discontinuities. Test repeated scrubbing, rate changes, pause/resume, hidden tab, and parameter revisions. Record state values or checksums and timing evidence; do not assert determinism from code structure alone.
+
+
+## 4. Build deterministic animation architecture
+
+Separate seven logical systems even in a single HTML file: simulation (physical state), timeline (phase/time mapping), geometry (semantic components), rendering (visual representation), presentation (camera and annotations), playback (controls and transport), configuration (validated inputs and recomputation). Establish one authoritative timeline and one canonical simulation state per parameter revision.
+
+- Derive every visible state from the current timeline position and immutable parameter revision. Use analytical sampling, keyframes or deterministic fixed-step integration with reproducible checkpoints as appropriate. Seeking forward/backward, replay, phase skipping and looping must restore the correct state without accumulating mutations.
+- Distinguish presentation clock, physical clock and render cadence. Use monotonic elapsed time; playback speed changes presentation progression only, not governing equations or numerical step size. Handle pause, inactive tabs, terminal frame, event holds and looping without drift or catch-up instability.
+- Maintain boundary continuity except for explicitly modeled physical discontinuities (impact, fracture, contact, switching, topology change). Preserve stable geometry IDs and define reversible lifecycle changes. Never use cinematic easing on physical state if it changes the governing relationship.
+- Validate parameter inputs and derived constraints. Pause or safely recompute when a change invalidates the solution; cancel stale work and atomically replace the timeline/state/geometry revision. Preserve playback position only if meaningful and valid, otherwise reset with clear feedback.
+- Follow this reference and [motion physics](motion-physics.md).

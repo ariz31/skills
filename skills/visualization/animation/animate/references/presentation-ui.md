@@ -19,3 +19,13 @@ Bind labels, callouts, quantities and phase explanations to timeline and physica
 For spatial scenes, define phase-specific camera target, framing and optional interpolated path; prevent clipping and disorientation. Manual orbit/pan/zoom or viewport override suspends auto-camera until explicitly resumed or reset. Seek updates auto-camera to the target phase when active; manual state remains stable. Use reduced-motion preference to suppress cinematic travel/easing, keep necessary physical motion manually controllable, and avoid forced autoplay. Provide keyboard-operable controls with visible focus, meaningful labels, touch-friendly targets and sensible mobile safe-area spacing.
 
 Verify desktop/mobile portrait and landscape, narrow screens, fullscreen entry/exit/fallback, reveal/hide from each input method, pause/focus behavior, keyboard navigation, annotation toggle, camera override/resume and configuration panel usability.
+
+
+## 5. Presentation and playback
+
+Make the visualization the primary canvas, with compact contextual phase indicator, collapsible information and parameter panels, and an auto-hiding playback overlay. Support play/pause, replay, scrub, previous/next phase, adjustable playback speed, frame stepping, optional loop/autoplay and phase repetition. Start paused and silent unless requested otherwise. Event holds must be optional or clearly communicated and resumable.
+
+- Offer fullscreen presentation with all nonessential UI hidden during playback, and a dedicated clean mode. Restore controls on pointer, touch or keyboard interaction; keep keyboard focus visible and controls accessible when paused, focused or being used. Never trap the user in hidden controls or fullscreen. Use a viewport-maximized fallback if native fullscreen is unsupported, clearly labeled as such.
+- Keep annotations synchronized to timeline and physical state. Include units, meaningful labels and short explanations when educational or technical; allow hide-all. Avoid permanently obstructing the subject. Provide phase-specific camera framing/transitions with manual override for applicable views; user camera manipulation must not fight automatic camera updates. Offer resume-auto-camera or reset.
+- Use context-dependent transitions, adaptive technical/realistic/educational visual language, accurate geometry/materials and purposeful visual hierarchy. Do not add decorative motion that reduces comprehension. Support responsive desktop/mobile, touch, keyboard, reduced-motion preferences and sufficient contrast.
+- Follow this reference and [rendering and performance](rendering-performance.md).

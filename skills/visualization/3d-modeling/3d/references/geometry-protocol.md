@@ -30,3 +30,22 @@ Use domain-specific skills when registered and relevant. Do not infer structural
 - Verify openings through actual geometry rather than painted rectangles where the opening is required.
 - For parameterized inputs, test nominal, boundary and invalid values; verify dependent geometry after changes.
 - For real-world models, report source uncertainty separately from computational/mesh tolerance. Only claim the accuracy demonstrable from both.
+
+
+## 1. Define the modeling contract
+
+- Identify subject, intended use, audience, scope, detail, drawings, specifications, dimensions, units, interaction and delivery requirements. Distinguish conceptual/educational models from measured reconstructions and engineering design representations.
+- Prioritize supplied approved drawings/measurements, authoritative survey/GIS or manufacturer data, then identified secondary sources. Resolve or disclose discrepancies. Never invent survey coordinates, manufacturer dimensions, concealed construction, code compliance or precision.
+- Maintain a dimension/component register with ID, source, value, unit, datum, provenance (measured, specified, derived, estimated, illustrative), uncertainty and justified acceptance tolerance. Numerical consistency is not proof of real-world accuracy.
+- Define SI units (1 world unit = 1 m unless explicitly justified otherwise), right-handed Y-up coordinate frame, origin, axis mapping, orientation and datum. Keep georeferenced scenes in a local metric frame and preserve transformation metadata.
+- Derive tolerances from intended use and source precision, not a universal arbitrary threshold. If data are missing, use explicitly labeled assumptions where reasonable; do not fabricate exact dimensions. If the requested real-world accuracy is unattainable, disclose that and deliver a labeled conceptual/partial result rather than certify it.
+
+## 2. Construct source-driven geometry
+
+- Build a semantic assembly tree: site/system, subassemblies, components and interfaces. Inventory every required component against the scope and source data.
+- Use a single canonical dimension source and parametric geometry. Compute placements, rotations, sections, clearances, openings, connections, profiles and elevations from constraints rather than arbitrary offsets.
+- Use appropriate geometry: extrusions, sweeps, curves, indexed meshes, triangulated surfaces, validated imported assets and constructive geometry where needed. Generic boxes are acceptable only for truly box-shaped items or explicitly labeled abstractions.
+- Model relevant visible and hidden components, openings, elevations, supports, joints, slopes, transitions, interfaces and interior/exterior relationships. Do not add invented reinforcement or concealed services as verified facts.
+- Separate physical geometry and presentation transforms. Exploded, exaggerated and cutaway views must be reversible and visibly labeled. Measurements refer to original physical geometry, not exploded spacing.
+- Preserve stable component IDs, names, dimensions, provenance, materials, hierarchy and layer membership. Allocate detail by technical importance and viewing distance; never simplify away essential interfaces or dimensions.
+- Apply the this geometry protocol when available for domain-specific requirements.
