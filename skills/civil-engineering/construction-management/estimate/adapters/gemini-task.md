@@ -7,7 +7,7 @@ Use only actual exposed capabilities and authorized files. Inspect signatures; d
 | Intake | `ask_question` when exposed, else concise chat; standalone two Estimate questions total; co-selected Ask owns intake and Intent Check, with follow-ups capped at `max(0, 2 - estimate_questions_already_asked)` |
 | Source retrieval | Authorized Workspace/Drive search and read; VM/file tools for uploaded PDFs, drawings or spreadsheets when available; retain page/cell/revision provenance |
 | Pricing | Actual web/source retrieval; otherwise user rates or labeled benchmark/assumption |
-| Worker orchestration | Delegate's canonical skill `delegate`'s `adapters/gemini-task.md`; native dispatch/status/read when exposed, otherwise four sequential roles |
+| Worker orchestration | Canonical skill `delegate`'s `adapters/gemini-task.md`; native dispatch/status/read when exposed, otherwise four sequential roles |
 | Calculation and artifact | Available spreadsheet/VM calculation and creation tools; verify exact workbook formulas or PDF rendering; otherwise structured report with limitations |
 | Delivery | Actual Workspace link or supported file presentation; never invent path or URL |
 

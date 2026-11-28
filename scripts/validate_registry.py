@@ -268,6 +268,10 @@ def validate(root, registry, maximum=800, warning=750, trigger_file=None):
                 resolved = (md.parent/target).resolve()
                 if not resolved.is_relative_to(d) or not resolved.is_file():
                     issue("V12","broken or escaped relative link "+target,k,md)
+    # Also reject Markdown outside registered skill roots, rather than silently skipping it.
+    for md in (root / "skills").rglob("*.md"):
+        if not any(md.resolve().is_relative_to(d) for d in valid_dirs.values()):
+            issue("V12", "Markdown outside registered skill package", path=md)
     if trigger_file is not None:
         try:
             data = json.loads(trigger_file.read_text(encoding="utf-8"))

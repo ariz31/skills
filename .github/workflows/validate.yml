@@ -32,6 +32,9 @@ jobs:
             --triggers-file evaluations/triggers.json \
             --format text
 
+      - name: Run positive and negative acceptance tests
+        run: python3 -m unittest discover -s tests -v
+
       - name: Smoke-test deterministic skill packaging (dir & zip)
         run: |
           python3 scripts/package_skill.py --all --platform gemini-task --format dir --output-dir /tmp/dist-dir

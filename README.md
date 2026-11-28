@@ -16,6 +16,7 @@ The repository is not an automatically installed plugin. The assistant must have
 - [Taxonomy](docs/TAXONOMY.md): categories and planned specialization.
 - [Authoring standard](docs/SKILL_STANDARD.md): contracts and contribution requirements.
 - [Platform profiles](platforms/README.md): capability-aware execution.
+- [Release runbook](docs/RELEASE.md): verification, staged version history and rollback.
 - [Ask](skills/orchestration/ask/SKILL.md): intent clarification, multiple-choice disambiguation, explicit assumptions, and pre-implementation verification. Invoke with `@ask`, `/ask`, ideation prompts, or high-ambiguity requests.
 - [Delegate](skills/orchestration/delegate/SKILL.md): multi-agent coordination and strict auditing.
 - [3D](skills/visualization/3d-modeling/3d/SKILL.md): source-grounded interactive 3D models with a 95/100 technical quality gate. Invoke with `@3d`, `/3d`, 3D, Three.js, threejs or related modeling terms. The former skill name `threejs-modeling` remains an invocation alias.
