@@ -1,6 +1,6 @@
 # Gemini Task adapter: Max
 
-Use only real exposed tools and inspect their signatures. Reuse [Delegate's adapter](../../delegate/adapters/gemini-task.md) for all worker lifecycle operations. The top-level coordinator owns both cycles and outer remediation; workers and auditors never invoke nested workers.
+Use only real exposed tools and inspect their signatures. Reuse canonical skill `delegate`'s `adapters/gemini-task.md` for all worker lifecycle operations. The top-level coordinator owns both cycles and outer remediation; workers and auditors never invoke nested workers.
 
 | Portable operation | Gemini Task mapping if available |
 |---|---|

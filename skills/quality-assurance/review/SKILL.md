@@ -11,7 +11,7 @@ Audit an existing artifact against the user's intended goal and produce a tracea
 
 Recognize case-insensitive whole command tokens and aliases; load once. Use for substantive critical review, code/technical/artifact audit, rubric evaluation or adversarial review. Do not trigger from incidental mentions, literature-review explanations, quick fact checks or direct copy-edit/rewrite without requested audit. If no artifact or objective is known, request only missing essentials. Do not invent source content.
 
-Pin the artifact/repository revision and identify goal, audience, format, audit scope, constraints, authorized actions, evidence sources and user-excluded checks. Resolve required [Delegate](../../orchestration/delegate/SKILL.md) and its audit contract, plus [rubric and scoring](references/rubric-and-scoring.md) and [dashboard spec](references/dashboard-ui-spec.md). If Ask is selected, confirm intent before dispatch. Missing required dependency instructions block compliant execution; missing required references must be retrieved or disclosed. Load selected domain skills to apply their existing rubrics, not to create unsolicited artifacts. Detect actual native worker, browser, file and execution capabilities.
+Pin the artifact/repository revision and identify goal, audience, format, audit scope, constraints, authorized actions, evidence sources and user-excluded checks. Resolve required canonical skill `delegate` and its audit contract, plus [rubric and scoring](references/rubric-and-scoring.md) and [dashboard spec](references/dashboard-ui-spec.md). If Ask is selected, confirm intent before dispatch. Missing required dependency instructions block compliant execution; missing required references must be retrieved or disclosed. Load selected domain skills to apply their existing rubrics, not to create unsolicited artifacts. Detect actual native worker, browser, file and execution capabilities.
 
 ## Workflow
 
@@ -27,3 +27,5 @@ Pin the artifact/repository revision and identify goal, audience, format, audit 
 When native workers unavailable, run distinct sequential adversarial lenses and report SELF-REVIEW; never fabricate agents. If independent verification is explicitly required and unavailable, label provisional/blocked. If file creation unavailable, provide complete HTML source where practical or requested Markdown/structured report. If browser unavailable, static-check dashboard and disclose runtime controls unverified. Missing source, stale revision, invented evidence, unauthorized source mutation, unsafe report markup, or unverified essentials labeled PASS are critical defects.
 
 See [evaluation scenarios](evaluations/SCENARIOS.md).
+
+Use [Gemini Task adapter](adapters/gemini-task.md) when applicable.

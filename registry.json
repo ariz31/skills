@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "library": "ariz31/skills",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "router": "ROUTER.md",
   "categories": [
     {
@@ -164,7 +164,7 @@
     {
       "id": "3d",
       "name": "3D",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "status": "active",
       "category": "visualization",
       "subcategory": "3d-modeling",
@@ -248,17 +248,19 @@
         "skills/visualization/3d-modeling/3d/references/rendering-delivery.md",
         "skills/visualization/3d-modeling/3d/references/audit-protocol.md"
       ],
-      "adapters": {}
+      "adapters": {
+        "gemini-task": "skills/visualization/3d-modeling/3d/adapters/gemini-task.md"
+      }
     },
     {
       "id": "ask",
       "name": "Ask",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "active",
       "category": "orchestration",
       "subcategory": "planning",
       "path": "skills/orchestration/ask/SKILL.md",
-      "description": "Clarify intent and resolve ambiguity before implementing anything using concise multiple-choice questions, explicit assumptions, and an Intent Check summary.",
+      "description": "Clarify intent and resolve ambiguity before implementing anything using adaptive 3–8 concise multiple-choice questions, explicit assumptions, and an Intent Check summary.",
       "triggers": [
         "@ask",
         "/ask",
@@ -302,7 +304,7 @@
     {
       "id": "animate",
       "name": "Animate",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "active",
       "category": "visualization",
       "subcategory": "animation",
@@ -377,12 +379,14 @@
         "skills/visualization/animation/animate/references/rendering-performance.md",
         "skills/visualization/animation/animate/references/audit-protocol.md"
       ],
-      "adapters": {}
+      "adapters": {
+        "gemini-task": "skills/visualization/animation/animate/adapters/gemini-task.md"
+      }
     },
     {
       "id": "max",
       "name": "Max",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "status": "active",
       "category": "orchestration",
       "subcategory": "execution",
@@ -446,7 +450,7 @@
     {
       "id": "msdeck",
       "name": "MSDeck",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "active",
       "category": "artifact-production",
       "subcategory": "presentations",
@@ -504,12 +508,14 @@
         "skills/artifact-production/presentations/msdeck/references/media-and-stepped-solutions.md",
         "skills/artifact-production/presentations/msdeck/references/verification-gate.md"
       ],
-      "adapters": {}
+      "adapters": {
+        "gemini-task": "skills/artifact-production/presentations/msdeck/adapters/gemini-task.md"
+      }
     },
     {
       "id": "review",
       "name": "Review",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "status": "active",
       "category": "quality-assurance",
       "subcategory": "artifact-audit",
@@ -566,12 +572,14 @@
         "skills/quality-assurance/review/references/rubric-and-scoring.md",
         "skills/quality-assurance/review/references/dashboard-ui-spec.md"
       ],
-      "adapters": {}
+      "adapters": {
+        "gemini-task": "skills/quality-assurance/review/adapters/gemini-task.md"
+      }
     },
     {
       "id": "estimate",
       "name": "Estimate",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "status": "active",
       "category": "civil-engineering",
       "subcategory": "construction-management",

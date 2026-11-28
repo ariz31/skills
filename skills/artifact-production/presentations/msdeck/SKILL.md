@@ -29,3 +29,5 @@ Check file creation, source retrieval, JS execution, browser and WebGL availabil
 No acceptance if essential navigation, step logic, content correctness, rendering, media, controls, or verification fails. Without browser execution, conduct static HTML/CSS/JS and source inspection, explicitly label runtime/viewport behavior unverified, and provide provisional output if essential checks cannot be established. No invented screenshots, executed checks, external image verification or file paths. Preserve the requested output; no silent format substitution.
 
 See [evaluation scenarios](evaluations/SCENARIOS.md).
+
+Use [Gemini Task adapter](adapters/gemini-task.md) when applicable.

@@ -11,7 +11,7 @@ Max is the outer execution coordinator, not another worker or a replacement for 
 
 Use for explicit commands (case-insensitive whole tokens), or clearly requested high-rigor multi-cycle execution. Do not trigger on incidental uses of "max", mathematical maximums, simple factual questions, or routine edits unless explicitly selected. If no task is known, ask for the objective. Honor scope, output format, permissions, and test restrictions. No mutation or external action without authorization.
 
-Load required [Delegate](../delegate/SKILL.md), its audit contract, and [goal audit contract](references/goal-audit-contract.md). Resolve relevant domain/artifact skills at the same registry revision. If Ask is selected, complete its intent confirmation before implementation or dispatch. Missing required instructions are a compliance blocker; retrieve them or disclose inability. Detect actual worker, workspace, execution and verification capabilities; use [Gemini Task adapter](adapters/gemini-task.md) only on that host when supported.
+Load required canonical skill `delegate`, its audit contract, and [goal audit contract](references/goal-audit-contract.md). Resolve relevant domain/artifact skills at the same registry revision. If Ask is selected, complete its intent confirmation before implementation or dispatch. Missing required instructions are a compliance blocker; retrieve them or disclose inability. Detect actual worker, workspace, execution and verification capabilities; use [Gemini Task adapter](adapters/gemini-task.md) only on that host when supported.
 
 ## Execution
 

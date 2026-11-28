@@ -42,7 +42,7 @@ Check whether the host provides a native structured multiple-choice questioning 
 ### 2. Ask Concise, Crucial Multiple-Choice Questions
 
 - Keep the entire clarification message short and scannable.
-- Ask at most **1 to 3 crucial questions** per round (4 only if genuinely unavoidable).
+- Ask an adaptive **3 to 8 crucial multiple-choice questions**: **3–4** for focused unknowns, **5–8** for multifaceted or high-stakes requests. If fewer than 3 genuine unknowns exist, ask only the real blockers (0–2) or skip to Assumptions and Intent Check. Never pad or exceed 8.
 - Format each question as **2 to 5 mutually exclusive multiple-choice options**, phrased concisely as direct choices.
 - Always allow the user to type a custom answer without padding the list with a redundant "Other" bullet when the UI already provides free text.
 - If the user is asking for ideas (`@ask` or brainstorming), frame the multiple-choice options around concrete strategic directions or trade-offs rather than open-ended blanks.
@@ -77,7 +77,7 @@ A turn passes only when all criteria hold:
 Critical defects (must fix before proceeding):
 
 - Starting implementation while high-impact ambiguity remains unresolved.
-- Asking more than 4 questions, asking open-ended essay questions when multiple-choice fits, or asking about trivial details that should be assumed.
+- Asking more than 8 questions or padding with trivial questions, asking open-ended essay questions when multiple-choice fits, or asking about trivial details that should be assumed.
 - Making silent assumptions without disclosing them.
 - Writing verbose preambles or repeating the user's prompt back word for word.
 
@@ -89,7 +89,7 @@ Critical defects (must fix before proceeding):
 
 ## Gotchas
 
-- **Do not turn `@ask` into an interrogation:** 2 sharp multiple-choice questions beat 7 mediocre ones.
+- **Do not turn `@ask` into an interrogation:** 3 sharp questions beat 8 mediocre ones; use 5–8 only for distinct crucial decisions.
 - **Do not hide assumptions in prose:** Put them in a short, scannable bullet list so the user can spot and override any wrong default in seconds.
 - **Do not loop forever:** Cap clarification at 1 to 2 rounds. If uncertainty is low after round 1, lock defaults, show the **Intent Check**, and confirm.
 
